@@ -21,7 +21,6 @@
 
 	
 </head>
-
 <!DOCTYPE html>
 <html>
 <title>Foundation Engine</title>
@@ -68,7 +67,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>Foundation Engine</b></h1>
+    <h1><b>Graphics Programming with Shaders (Direct X11)</b></h1>
 	<div class="w3-section w3-bottombar w3-padding-16">
 
 
@@ -76,24 +75,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</div>
 </div>
 
-<img src="../images/foundation.PNG" alt="Foundation Engine" style="width:100%" class ="w3-padding w3-round">
+<img src="../images/shaders.PNG" alt="Foundation Engine" style="width:100%" class ="w3-padding w3-round">
 
   <!-- About engine -->
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
     <h4><b>Overview</b></h4>
     <p>
-      The Foundation Engine is a lightweight 2D game engine which enables the user to create sprite based applications. 
-      At the time of writing this blog (03/04/23), the engine supports the following: 
+      In the graphics programming with shaders module I implemented several graphics programming techniques on the GPU. The following techniques were implemented
+      in a Direct X11 framework:
       <ol>
-        <li>A 2D batch renderer written in OpenGL 4.6</li>
-        <li>Texture atlas support</li>
-        <li>An entity component system (ENTT)</li>
-        <li>Scene serialization</li>
-        <li>An event dispatcher system</li>
-        <li>A scene editor with a user interface (powered by ImGui Dockspace)</li>
-        <li>Guizmos for translation, rotation and scaling operations.</li>
-        <li>C++ native scripting</li>
-        <li>2D Physics - Collision, Forces and Impulse</li>
+        <li>Vertex Manipulation (Heightmap) - In the Vertex Shader and Domain Shader</li>
+        <li>Normal Mapping (TBN Matrix)</li>
+        <li>Normal Sampling - Implemented Vertex Sampling and Pixel Sampling using partial derivatives.</li>
+        <li>Postprocessing - Box Blur and Gaussian Blur.</li>
+        <li>Lighting - Supporting directional, point and spotlights.</li>
+        <li>Shadowmapping - Supporting hard shadows and soft shadows (PCF).</li>
+        <li>Dynamic Level of Detail using Hull, Tesselation and Domain Shaders.</li>
+        <li>Billboarding</li>
       </ol>
     
   </p>
@@ -103,10 +101,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
      <div class="w3-row-padding">
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Batch Renderer</b></p>
+          <p><b>Vertex Manipulation</b></p>
           <p>  
-            In anticipation of high numbers of entities, the batch renderer enables the rendering of thousands of geometric shapes
-            at a significantly reduced draw call count. Dynamic texturing is supported allowing for unique texturing amongst the quads.
+            Centered in the scene is a plane that has been disstorted by a heightmap. The application contains an ordinary plane which has it's vertices disstorted in the 
+            vertex shader. Additionally, a 
           </p>
         </div>
       </div>
@@ -123,10 +121,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Entity Component System</b></p>
+          <p><b>Normal Mapping</b></p>
           <p>  
-            I chose to use ENTT to handle the large number of entities as well as the considerable number of configurations said entities may 'own'. Within the editor layer,
-            it is straightforward to add different components to the selected entity through the side panel.  
+            The application supports normal mapping the extrapolation of world space normals from texture space by multiplying the coordinates 
+            by the TBN, Tangent, Bi-Tangent and Normal, matrix. 
           </p>
         </div>
       </div>
@@ -135,7 +133,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
  <div class="w3-row-padding">
   <div class="w3-third w3-container w3-padding" >
     <div class="w3-container w3-white">
-      <p><b>Physics</b></p>
+      <p><b>Normal Sampling</b></p>
       <p>  
         The framework supports a 2D physics engine, simulating physics on all entities with a rigidbody component attached. 
       </p>

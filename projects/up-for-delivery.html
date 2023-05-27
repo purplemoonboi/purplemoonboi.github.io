@@ -3,8 +3,17 @@
 
 <html>
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2PHVJ7YS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SD2PHVJ7YS');
+</script>
 	<meta charset = "UTF-8">
-	<meta name = "Description" content = "An overview of the research I undertook as an honours student at Abertay University.">
+	<meta name = "Description" content = "An overview of the foundation engine project, an ongoing project I work on in my spare time.">
 	<meta name = "author" content = "Rhys Duff">
 	<meta name="keywords" content="Programming, Engine Programming, Graphics Programming, Portfolio">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,9 +65,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>Isosurface Algorithms</b></h1>
+    <h1><b>Up For Delivery (DARE Academy 2022)</b></h1>
 	<div class="w3-section w3-bottombar w3-padding-16">
 
 
@@ -66,18 +76,56 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</div>
 </div>
 
-<img src="../images/Honours.PNG" alt="Foundation Engine" style="width:100%" class ="w3-padding w3-round">
+
 
   <!-- About engine -->
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <div class="w3-center">
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/4WiNybHq5m4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div>
     <h4><b>Overview</b></h4>
-    <p>As part of my honours research, I created an application which allowed the user to edit voxel terrain using several techniques. 
-      The terrain was polygonised using isosurface techniques, including modified marching cubes and a dual contouring algorithm. In an effort
-      to improve the efficiency, both the marching cubes algorithm and dual contouring algorithm were implemented on the GPU through the compute shader.
- 
+    <p>Over the summer of 2022, I participated in DARE Academy and joined the talented team SnakeBride Software. There, I served as a general programmer in addition to a producer. I learned a lot of valuable skills, both as a general programmer working 
+      in Unreal Engine 4 as well as a producer.
     </p>
+      <p>
+     </p>
+     <!-- first row... -->
+     <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-padding" >
+        <div class="w3-container w3-white">
+          <p><b>Producer</b></p>
+          <p>  
+            As the producer, I helped the team organise the roadmap for DARE Academy into achievable milestones. 
+          </p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
+      </div>
+    </div>
+    <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-padding" >
+        <div class="w3-container w3-white">
+          <p><b>General Programmer</b></p>
+          <p>  
+            My main tasks as a general programmer consisted of working on;
+          </p>
+          <ul>
+            <li>Specialise Materials</li>
+            <li>Particel Emitters (NIAGARA)</li>
+            <li>Gameplay Scripting</li>
+            <li>Level Design</li>
+          </ul>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
+      </div>
+    </div>
+  
 
-	
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">

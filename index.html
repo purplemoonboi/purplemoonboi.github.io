@@ -53,7 +53,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#contact"    onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   </div>
   <div class="w3-panel w3-large">
-    <a href="https://twitter.com/DuffRhys"><i class="fa fa-twitter w3-hover-opacity"></i></a>
     <a href="https://www.linkedin.com/in/rhys-duff/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
   </div>
 </nav>
@@ -92,10 +91,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 
   <!-- First Photo Grid-->
-  
       <div class="w3-row-padding" >
         <div class="w3-third w3-container w3-margin-bottom">
-          <a href="projects/honours.html"><img src="images/Honours.PNG" alt="Honours" style="width:100%" class="w3-hover-opacity"></a>
+          <a href="projects/honours.html"><img src="images/Banner.PNG" alt="Honours" style="width:100%" class="w3-hover-opacity"></a>
           <div class="w3-container w3-white">
             <a href="projects/honours.html"><p><b>Honours Project</b></p></a>
             <p>For my honours, I am researching Isosurface algorithms and evaluating there appropriateness for voxel terrain editors.</p>
@@ -120,27 +118,28 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom" >
-      <img src="images/ai.png" alt="Artificial Intelligence" style="width:100%" class="w3-hover-opacity">
+    <div class="w3-third w3-container" >
+      <a href="projects/animation-systems.html"><img src="images/animation.png" alt="Animation Systems" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b>Neural Networks</b></p>
-        <p>Self driving entities? An application demonstrating how neural networks can be used to train entities to race around a circuit.</p>
+        <p><b>Animation Systems</b></p></a>
+        <p>An animation system capable of parsing, blending and playing 2D and 3D animations. All built upon an Entity Component System (ECS).</p>
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom" >
       <img src="images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
+        <a href="projects/shaders-and-graphics.html"><p><b>Shaders DirectX 11</b></p></a>
         <p><b>Shaders and Graphics Programming</b></p>
         <p>Lights, Camera and Dynamic LODs with tesselation? Everything shaders! Guassian Blurs, Normal Mapping and Surface Patches.</p>
       </div>
     </div>
     <div class="w3-third w3-container" >
-      <img src="images/animation.png" alt="Animation Systems" style="width:100%" class="w3-hover-opacity">
-      <div class="w3-container w3-white">
-        <p><b>Animation Systems</b></p>
-        <p>An animation system capable of parsing, blending and playing 2D and 3D animations. All built upon an Entity Component System (ECS).</p>
-      </div>
-    </div>
+		  <img src="images/networking.PNG" alt="Networking" style="width:100%" class="w3-hover-opacity">
+		  <div class="w3-container w3-white">
+			<p><b>Network Programming</b></p>
+			<p>An application demonstrating techniques for mitigating network latency. The application renders a boid of 32 fish across a network.</p>
+		  </div>
+		</div>
   </div>
 
     <!-- Thirs Photo Grid-->
@@ -155,6 +154,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 			<p>An application demonstrating procedural techniques including Perlin Noise, Simplex Noise, Voronoi Noise, Ridged Perlin and Hydraulic Erosion.</p>
 		  </div>
 		</div>
+    <div class="w3-third w3-container w3-margin-bottom" >
+      <img src="images/ai.png" alt="Artificial Intelligence" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Neural Networks</b></p>
+        <p>Self driving entities? An application demonstrating how neural networks can be used to train entities to race around a circuit.</p>
+      </div>
+    </div> 
 		<div class="w3-third w3-container w3-margin-bottom" >
 		  <img src="images/ar.PNG" alt="Augemented Reality" style="width:100%" class="w3-hover-opacity">
 		  <div class="w3-container w3-white">
@@ -162,15 +168,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 			<p>A vertical slice of a mini golf game developed in Unreal Engine for Android, utilising Augmented Reality technologies.</p>
 		  </div>
 		</div>
-		<div class="w3-third w3-container" >
-		  <img src="images/networking.PNG" alt="Networking" style="width:100%" class="w3-hover-opacity">
-		  <div class="w3-container w3-white">
-			<p><b>Network Programming</b></p>
-			<p>An application demonstrating techniques for mitigating network latency. The application renders a boid of 32 fish across a network.</p>
-		  </div>
-		</div>
-	  </div>
-    </div>
+		
+    
 </div>
 
   <!-- Pagination -->
@@ -195,7 +194,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <img src="images/me2.jpg" alt="Me in London whilst attending EGX." style="width:100%">
       </div>
   </div>
-
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-third w3-container w3-margin-bottom" >
+      <img src="images/architecture.PNG" alt="A picture of me atop the law." style="width:100%">
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom" >
+      <img src="images/forge.PNG" alt="A small render i made in blender." style="width:100%" >
+    </div>
+    <div class="w3-third w3-container" >
+      <img src="images/architecture-3.PNG" alt="Me in London whilst attending EGX." style="width:100%">
+    </div>
+</div>
   
 
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
@@ -211,21 +220,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
           3D modelling, rigging bipedal mesh in Blender as well as creating textures and materials in substance designer. Although I don't do much of the latter anymore, I like to jump into Blender and make stuff there!
 		 <p>
           I also like to cook, I'm no michelin star chef but I find the process fun and rewarding. Additionally, for the past year or so, I have been learning French on and off in my spare time. 
-          I'm not very good but I can... probably... with some assistance survive a day in France. 
+          I'm not very good and my speaking is even worse... but I might just be able to... probably... survive a day in France. 
     </p>
           Recently, I have been reading the biography, The Triumph And Tragedy of J. Robert. Oppenheimer, a figure known by most as the director of the Los Alamos Laboratory during the Manhatten Project. 
 			    When I eventually finish the book I plan on reading "Surely You're Joking, Mr Feynmann", but first, I need to find a way for making more time in the day. 
 		 </p>
 
 		 <p>
-      Other interests and hobbies include Formula One, listening to music and going on walks. I have also started looking into modding older games,
-      such as GTA IV as well as Skyrim and I'm keen to continue this hobby once I have finished my degree.
-		 </p>
+      Other interests and hobbies include Formula One, listening to music and going on walks. 
 
     <hr>
 
     <div class="w3-container w3-padding" style="margin-bottom:16px" id="cv">
     <h4><b><p>My CV</p><b></h4>
+      <a href="downloads/Rhys-Duff-CV.pdf" download> <img src="images/cv-img.PNG" alt="Me in London whilst attending EGX." style="width:10%"></a>
     </div>
 
   

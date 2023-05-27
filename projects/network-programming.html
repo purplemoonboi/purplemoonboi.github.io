@@ -15,13 +15,12 @@
 	<meta charset = "UTF-8">
 	<meta name = "Description" content = "An overview of the foundation engine project, an ongoing project I work on in my spare time.">
 	<meta name = "author" content = "Rhys Duff">
-	<meta name="keywords" content="Programming, Engine Programming, Graphics Programming, Portfolio">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name = "keywords" content="Programming, Engine Programming, Graphics Programming, Portfolio">
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
 
 
 	
 </head>
-
 <!DOCTYPE html>
 <html>
 <title>Foundation Engine</title>
@@ -54,7 +53,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="../index.#contact"    onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   </div>
   <div class="w3-panel w3-large">
-    <a href="https://twitter.com/DuffRhys"><i class="fa fa-twitter w3-hover-opacity"></i></a>
     <a href="https://www.linkedin.com/in/rhys-duff/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
   </div>
 </nav>
@@ -70,7 +68,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>Foundation Engine</b></h1>
+    <h1><b>Graphics Programming with Shaders (Direct X11)</b></h1>
 	<div class="w3-section w3-bottombar w3-padding-16">
 
 
@@ -78,24 +76,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</div>
 </div>
 
-<img src="../images/foundation.PNG" alt="Foundation Engine" style="width:100%" class ="w3-padding w3-round">
+<img src="../images/shaders.PNG" alt="Foundation Engine" style="width:100%" class ="w3-padding w3-round">
 
   <!-- About engine -->
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
     <h4><b>Overview</b></h4>
     <p>
-      The Foundation Engine is a lightweight 2D game engine which enables the user to create sprite based applications. 
-      At the time of writing this blog (03/04/23), the engine supports the following: 
+      In the graphics programming with shaders module I implemented several graphics programming techniques on the GPU. The following techniques were implemented
+      in a Direct X11 framework:
       <ol>
-        <li>A 2D batch renderer written in OpenGL 4.6</li>
-        <li>Texture atlas support</li>
-        <li>An entity component system (ENTT)</li>
-        <li>Scene serialization</li>
-        <li>An event dispatcher system</li>
-        <li>A scene editor with a user interface (powered by ImGui Dockspace)</li>
-        <li>Guizmos for translation, rotation and scaling operations.</li>
-        <li>C++ native scripting</li>
-        <li>2D Physics - Collision, Forces and Impulse</li>
+        <li>Vertex Manipulation (Heightmap) - In the Vertex Shader and Domain Shader</li>
+        <li>Normal Mapping (TBN Matrix)</li>
+        <li>Normal Sampling - Implemented Vertex Sampling and Pixel Sampling using partial derivatives.</li>
+        <li>Postprocessing - Box Blur and Gaussian Blur.</li>
+        <li>Lighting - Supporting directional, point and spotlights.</li>
+        <li>Shadowmapping - Supporting hard shadows and soft shadows (PCF).</li>
+        <li>Dynamic Level of Detail using Hull, Tesselation and Domain Shaders.</li>
+        <li>Billboarding</li>
       </ol>
     
   </p>
@@ -105,47 +102,83 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
      <div class="w3-row-padding">
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Batch Renderer</b></p>
+          <p><b>Vertex Manipulation (VS & DS)</b></p>
           <p>  
-            In anticipation of high numbers of entities, the batch renderer enables the rendering of thousands of geometric shapes
-            at a significantly reduced draw call count. Dynamic texturing is supported allowing for unique texturing amongst the quads.
+            Centered in the scene is a plane that has been disstorted by a heightmap. The application contains an ordinary plane which has it's vertices disstorted in the 
+            vertex shader from a height map.</p><p> Additionally, a matrix of patches can be swapped into the scene demonstrating not only dynamic tessellation, see below, but also 
+            vertex displacement occurring in the domain shader.
           </p>
         </div>
       </div>
       <div class="w3-third w3-container w3-padding w3-center" >
         <!--image-->
-        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:100%" class="w3-hover-opacity">
+        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
+      </div>
+    </div>
+    <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-padding" >
+        <div class="w3-container w3-white">
+          <p><b>Guassian Blur & Box Blur</b></p>
+          <p>  
+            The chosen post processing techniqes were guassian bluring and box blurring. Post-processing takes place after the scene has been initially written to a 
+            render target. A mask is created from the render target and stored in a subsequent texture ready for the blur pass. 
+          </p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
       </div>
     </div>
     <!-- next row... -->
     <div class="w3-row-padding">
-      <div class="w3-third w3-container w3-padding w3-center" >
-        <!--image-->
-        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:100%" class="w3-hover-opacity">
-      </div>
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Entity Component System</b></p>
+          <p><b>Normal Mapping & Normal Sampling</b></p>
           <p>  
-            I chose to use ENTT to handle the large number of entities as well as the considerable number of configurations said entities may 'own'. Within the editor layer,
-            it is straightforward to add different components to the selected entity through the side panel.  
+            The application supports normal mapping the extrapolation of world space normals from texture space by multiplying the coordinates 
+            by the TBN, Tangent, Bi-Tangent and Normal, matrix.</p><p> Additionally, using partial derivatives, a per-vertex and per-pixel normal function was 
+            implemented. This enabled the generation of normals on the fly, adding significant amount of detail on lower resolution height-maps. 
           </p>
         </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <img src="../images/tessB1.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
       </div>
     </div>
  <!-- third row... -->
  <div class="w3-row-padding">
   <div class="w3-third w3-container w3-padding" >
     <div class="w3-container w3-white">
-      <p><b>Physics</b></p>
+      <p><b>Dynamic Tessellation</b></p>
       <p>  
-        The framework supports a 2D physics engine, simulating physics on all entities with a rigidbody component attached. 
+        A GPU accelerated LOD surface patch algorithm was implemented across the hull shader and domain shader.</p><p> A 12-point control patch was uploaded
+        from the CPU where each patch was tessellated with respects to the camera's position. This enabled high resolution vertex displacement close to 
+        the camera while rendering less geometry further from the camera.
       </p>
     </div>
   </div>
   <div class="w3-third w3-container w3-padding w3-center" >
     <!--image-->
-    <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:100%" class="w3-hover-opacity">
+    <img src="../images/tessA.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
+  </div>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-third w3-container w3-padding" >
+    <div class="w3-container w3-white">
+      <p><b>Shadow Mapping</b></p>
+      <p>  
+        Shadow mapping was implemented for directional lighting and spotlights. Both hard shadows and soft shadows are supported. PCF was used as the method for soft shadows, supporting
+        3x3, 5x5 and 7x7 filtering.
+      </p>
+    </div>
+  </div>
+  <div class="w3-third w3-container w3-padding w3-center" >
+    <!--image-->
+    <img src="../images/shadowPCF3x3.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
+    <img src="../images/ShadowPCF7x7.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
   </div>
 </div>
 	

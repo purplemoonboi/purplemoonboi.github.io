@@ -21,7 +21,6 @@
 
 	
 </head>
-
 <!DOCTYPE html>
 <html>
 <title>Foundation Engine</title>
@@ -54,7 +53,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="../index.#contact"    onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   </div>
   <div class="w3-panel w3-large">
-    <a href="https://twitter.com/DuffRhys"><i class="fa fa-twitter w3-hover-opacity"></i></a>
     <a href="https://www.linkedin.com/in/rhys-duff/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
   </div>
 </nav>
@@ -70,7 +68,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>Foundation Engine</b></h1>
+    <h1><b>Animation Systems</b></h1>
 	<div class="w3-section w3-bottombar w3-padding-16">
 
 
@@ -78,77 +76,102 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</div>
 </div>
 
-<img src="../images/foundation.PNG" alt="Foundation Engine" style="width:100%" class ="w3-padding w3-round">
-
   <!-- About engine -->
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+   
     <h4><b>Overview</b></h4>
     <p>
-      The Foundation Engine is a lightweight 2D game engine which enables the user to create sprite based applications. 
-      At the time of writing this blog (03/04/23), the engine supports the following: 
-      <ol>
-        <li>A 2D batch renderer written in OpenGL 4.6</li>
-        <li>Texture atlas support</li>
-        <li>An entity component system (ENTT)</li>
-        <li>Scene serialization</li>
-        <li>An event dispatcher system</li>
-        <li>A scene editor with a user interface (powered by ImGui Dockspace)</li>
-        <li>Guizmos for translation, rotation and scaling operations.</li>
-        <li>C++ native scripting</li>
-        <li>2D Physics - Collision, Forces and Impulse</li>
+      In the Animation Systems module, I implemented the following systems and animation techniques:
+      <ol><h4><b>Animation Systems</b></h4>
+        <li>Entity Component System </li>
+        <li>Blend Tree (3D Animation)</li>
+        <li>2D Armature Json Parser</li>
+        <li>2D Skeleton Animator</li>
+        <li>Sprite Json Parser </li>
+        <li>Sprite Animator</li>
       </ol>
-    
+      <ol> <h4><b>Animation Techniques</b></h4>
+        <li>Procedural Physics Ragdoll</li>
+        <li>Linear Blending</li>
+        <li>Bi-Linear Locomotive Blending</li>
+        <li>Additive Blending</li>
+        <li>Supports Animation Switching (2D)</li>  
+      </ol>
   </p>
+  <video width="1920" height="1080" controls>
+    <source src="../videos/anim-systems-proj-A+.mp4" type="video/mp4">
+  </video>
       <p>
      </p>
      <!-- first row... -->
      <div class="w3-row-padding">
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Batch Renderer</b></p>
-          <p>  
-            In anticipation of high numbers of entities, the batch renderer enables the rendering of thousands of geometric shapes
-            at a significantly reduced draw call count. Dynamic texturing is supported allowing for unique texturing amongst the quads.
-          </p>
-        </div>
-      </div>
-      <div class="w3-third w3-container w3-padding w3-center" >
-        <!--image-->
-        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:100%" class="w3-hover-opacity">
-      </div>
-    </div>
-    <!-- next row... -->
-    <div class="w3-row-padding">
-      <div class="w3-third w3-container w3-padding w3-center" >
-        <!--image-->
-        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:100%" class="w3-hover-opacity">
-      </div>
-      <div class="w3-third w3-container w3-padding" >
-        <div class="w3-container w3-white">
           <p><b>Entity Component System</b></p>
           <p>  
-            I chose to use ENTT to handle the large number of entities as well as the considerable number of configurations said entities may 'own'. Within the editor layer,
-            it is straightforward to add different components to the selected entity through the side panel.  
+            An entity component system (ECS) was implemented to take advantage of Data-Orientated Programming techniques.</p><p>Components represent pieces of data ranging from 2D sprites, Bones, Skins and Animations to name a few. </p><p>Components are stored in their respective
+            tightly packed arrays, in an effort to improve the performance during the game's update pass.  
           </p>
         </div>
       </div>
+      <div class="w3-third w3-container w3-padding w3-center" >  
+        <!--image-->
+        <img src="../images/anim-ecs-img-2.PNG" alt="Graphics Programming in Direct X11" style="width:150%" class="w3-hover-opacity">
+      </div>
     </div>
- <!-- third row... -->
- <div class="w3-row-padding">
-  <div class="w3-third w3-container w3-padding" >
-    <div class="w3-container w3-white">
-      <p><b>Physics</b></p>
-      <p>  
-        The framework supports a 2D physics engine, simulating physics on all entities with a rigidbody component attached. 
-      </p>
+
+    <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-padding" >
+        <div class="w3-container w3-white">
+          <p><b>Blend Tree</b></p>
+          <p>  
+            A blend tree was implemented allowing the user to construct complex animation states with minimum code. The tree supports the following nodes:
+            <ol>
+              <li>Animation Clip</li>
+              <li>Linear Blend</li>
+              <li>2D Blend</li>
+              <li>Additive Blend</li>
+              <li>Ragdoll</li>
+              <li>Output</li>
+            </ol>
+          </p>
+          <p>Additionally, the blend tree supports multiple data attributes, controlling different aspects of the animations.</p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <img src="../images/blend-tree-img-1.PNG" alt="Graphics Programming in Direct X11" style="width:150%" class="w3-hover-opacity">
+      </div>
     </div>
-  </div>
-  <div class="w3-third w3-container w3-padding w3-center" >
-    <!--image-->
-    <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:100%" class="w3-hover-opacity">
-  </div>
-</div>
-	
+
+	<div class="w3-row-padding">
+      <div class="w3-third w3-container w3-padding" >
+        <div class="w3-container w3-white">
+          <p><b>2D Armature Parser</b></p>
+          <p>An armature parser was implemented capable of reading and extrapolating armature data from a Json file format.</p>
+          <p>The parser reads from a file containing all the necessary data to perform 2D skeletal animation, such as bones, skin and frame data, then stores the data into components.</p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <img src="../images/blend-tree-img-1.PNG" alt="Graphics Programming in Direct X11" style="width:150%" class="w3-hover-opacity">
+      </div>
+    </div>
+
+    <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-padding" >
+        <div class="w3-container w3-white">
+          <p><b>2D Armature Parser</b></p>
+          <p>An armature parser was implemented capable of reading and extrapolating armature data from a Json file format.</p>
+          <p>The parser reads from a file containing all the necessary data to perform 2D skeletal animation, such as bones, skin and frame data, then stores the data into components.</p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <img src="../images/blend-tree-img-1.PNG" alt="Graphics Programming in Direct X11" style="width:150%" class="w3-hover-opacity">
+      </div>
+    </div>
+
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">

@@ -26,7 +26,7 @@ node_modules/
 #*.jpeg
 #*.jpg
 
-# additional files
+ additional files
 #*.pdf
 
 #ignore videos
@@ -36,7 +36,7 @@ node_modules/
 #*.mp4
 
 #downloads
-/downloads
+#/downloads
 
 # ignore OS generated files
 ehthumbs.db

@@ -68,7 +68,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1><b>Animation Systems</b></h1>
+    <h1><b>Graphics Programming with Shaders (Direct X11)</b></h1>
 	<div class="w3-section w3-bottombar w3-padding-16">
 
 
@@ -76,101 +76,66 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</div>
 </div>
 
+
+
   <!-- About engine -->
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-   
     <h4><b>Overview</b></h4>
     <p>
-      In the Animation Systems module, I implemented the following systems and animation techniques:
-      <ol><h4><b>Animation Systems</b></h4>
-        <li>Entity Component System </li>
-        <li>Blend Tree (3D Animation)</li>
-        <li>2D Armature Json Parser</li>
-        <li>2D Skeleton Animator</li>
-        <li>Sprite Json Parser </li>
-        <li>Sprite Animator</li>
+      In the procedural methods module I implemented several procedural techniques on the CPU. The following techniques were implemented
+      in a Direct X11 framework:
+      <ol>
+        <li>Hydraulic Erosion</li>
+        <li>Trochoidial Waves</li>
+        <li>Voronoi Noise (GPU)</li>
+        <li>Simplex Noise</li>
+        <li>Perlin Noise</li>
+        <li>Improved Perlin Noise</li>
+        <li>Octave Perlin Noise</li>
+        <li>Ridged Perlin Noise</li>
       </ol>
-      <ol> <h4><b>Animation Techniques</b></h4>
-        <li>Procedural Physics Ragdoll</li>
-        <li>Linear Blending</li>
-        <li>Bi-Linear Locomotive Blending</li>
-        <li>Additive Blending</li>
-        <li>Supports Animation Switching (2D)</li>  
-      </ol>
+    
   </p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/-HE2lHyhlRY?start=41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+      <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GhXNqHY734o?start=104" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     </p>
      <!-- first row... -->
      <div class="w3-row-padding">
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Entity Component System</b></p>
+          <p><b>Hydraulic Erosion</b></p>
           <p>  
-            An entity component system (ECS) was implemented to take advantage of Data-Orientated Programming techniques.</p><p>Components represent pieces of data ranging from 2D sprites, Bones, Skins and Animations to name a few. </p><p>Components are stored in their respective
-            tightly packed arrays, in an effort to improve the performance during the game's update pass.  
-          </p>
+            The Hydraulic erosion algorithm implemented aims to simulate the erosive features exerted on terrain from water droplets.</p>
+            <p>Water droplets erode the terrain through bilinear interpolation across four vertices taking into account the gradient at each point.</p>
+            <p>If the droplet identifies the current cell is a pit, the droplet releases sediment until the pit has been filled.</p>
         </div>
       </div>
-      <div class="w3-third w3-container w3-padding w3-center" >  
+      <div class="w3-third w3-container w3-padding w3-center" >
         <!--image-->
-        <img src="../images/anim-ecs-img-2.PNG" alt="Snippet of code registering components." style="width:150%">
+        <!--<video width="720" height="480" controls><source src="../videos/vertex-manipulation.mp4" type="video/mp4"></video>-->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tJmSCKL8pEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
       </div>
     </div>
-
     <div class="w3-row-padding">
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Blend Tree</b></p>
+          <p><b>Trochoidial Waves</b></p>
           <p>  
-            A blend tree was implemented allowing the user to construct complex animation states with minimum code. The tree supports the following nodes:
-            <ol>
-              <li>Animation Clip</li>
-              <li>Linear Blend</li>
-              <li>2D Blend</li>
-              <li>Additive Blend</li>
-              <li>Ragdoll</li>
-              <li>Output</li>
-            </ol>
+            Trochoidial waves were implemented on the vertex shader and textured using a voronoi noise patter, discussed below. The algorithm aims to capture the motion of waves by displacing the vertices through a series of sine and cosine operations.
           </p>
-          <p>Additionally, the blend tree supports multiple data attributes, controlling different aspects of the animations.</p>
+          <p>Using relations </p>
         </div>
       </div>
       <div class="w3-third w3-container w3-padding w3-center" >
         <!--image-->
-        <!--<video width="720" height="480" controls><source src="../videos/3d-anim.mp4" type="video/mp4"></video>-->
-        <iframe width="720" height="480" src="https://www.youtube.com/embed/S9snlCat03M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!--<video width="720" height="480" controls><source src="../videos/post-fx.mp4" type="video/mp4"></video>-->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1DbnO-MLZTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
       </div>
     </div>
-
-	<div class="w3-row-padding">
-      <div class="w3-third w3-container w3-padding" >
-        <div class="w3-container w3-white">
-          <p><b>2D Armature Parser</b></p>
-          <p>An armature parser was implemented capable of reading and extrapolating armature data from a Json file format.</p>
-          <p>The parser reads from a file containing all the necessary data to perform 2D skeletal animation, such as bones, skin and frame data, then stores the data into components.</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container w3-padding w3-center" >
-        <!--image-->
-        <img src="../images/json-parser.PNG" alt="Graphics Programming in Direct X11" style="width:150%">
-      
-      </div>
-    </div>
-
-    <div class="w3-row-padding">
-      <div class="w3-third w3-container w3-padding" >
-        <div class="w3-container w3-white">
-          <p><b>2D Sprite Animation</b></p>
-          <p>.</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container w3-padding w3-center" >
-        <!--image-->
-        <!--<video width="720" height="480" controls><source src="../videos/2d-animation.mp4" type="video/mp4"></video>-->
-        <iframe width="720" height="480" src="https://www.youtube.com/embed/Ibq-BythMMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-
+   
+	
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">

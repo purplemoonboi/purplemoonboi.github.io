@@ -30,10 +30,10 @@ node_modules/
 #*.pdf
 
 #ignore videos
-#/videos
+/videos
 
 # video formats
-#*.mp4
+*.mp4
 
 #downloads
 #/downloads

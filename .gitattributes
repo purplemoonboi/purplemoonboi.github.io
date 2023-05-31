@@ -113,24 +113,24 @@ makefile          text
 # Heroku
 Procfile          text
 # Graphics
-*.ai              binary
-*.bmp             binary
-*.eps             binary
-*.gif             binary
-*.gifv            binary
-*.ico             binary
-*.jng             binary
-*.jp2             binary
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.jpx             binary
-*.jxr             binary
-*.pdf             binary
-*.png filter=lfs diff=lfs merge=lfs -text
-*.psb             binary
-*.psd             binary
+#*.ai              binary
+#*.bmp             binary
+#*.eps             binary
+#*.gif             binary
+#*.gifv            binary
+#*.ico             binary
+#*.jng             binary
+#*.jp2             binary
+#*.jpg filter=lfs diff=lfs merge=lfs -text
+#*.jpeg filter=lfs diff=lfs merge=lfs -text
+#*.jpx             binary
+#*.jxr             binary
+#*.pdf             binary
+#*.png filter=lfs diff=lfs merge=lfs -text
+#*.psb             binary
+#*.psd             binary
 # SVG treated as an asset (binary) by default.
-*.svg             text
+#*.svg             text
 # If you want to treat it as binary,
 # use the following line instead.
 # *.svg           binary
@@ -186,6 +186,6 @@ Procfile          text
 *.*rc             text
 # Ignore files (like .npmignore or .gitignore)
 *.*ignore         text
-images/** filter=lfs diff=lfs merge=lfs -text
-videos/** filter=lfs diff=lfs merge=lfs -text
-*images/*.png filter=lfs diff=lfs merge=lfs -text
+#images/** filter=lfs diff=lfs merge=lfs -text
+#videos/** filter=lfs diff=lfs merge=lfs -text
+#*images/*.png filter=lfs diff=lfs merge=lfs -text

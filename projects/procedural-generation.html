@@ -122,7 +122,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <div class="w3-container w3-white">
           <p><b>Trochoidial Waves</b></p>
           <p>  
-            Trochoidial waves were implemented on the vertex shader and textured using a voronoi noise pattern, discussed below. The algorithm aims to capture the motion of waves by displacing the vertices using sine and cosine operations. 
+            Trochoidial waves were implemented on the vertex shader and textured using a voronoi noise pattern, discussed below. The algorithm aims to capture the motion of waves by displacing the vertices using sine and cosine operations.</p>
+            <p> To procure the sharp troughs, an offset with respect to the original vertex position, the anchor point, is applied in both the 'x' and 'z' directions to produce circular motion. The amplitude is controlled through a ratio, s / k, where 
+              's' is a value between '0' and '1' and 'k' is the 2 * PI over the wavelength.
+            </p>
           </p>
           <p></p>
         </div>

@@ -76,7 +76,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</div>
 </div>
 
-<img src="../images/shaders.PNG" alt="Foundation Engine" style="width:100%" class ="w3-padding w3-round">
 
   <!-- About engine -->
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
@@ -87,85 +86,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <p>
       Entities were rewarded by traveling a distance from the start position as well as for remaining on the track. 
     </p>
-      <p>
-     </p>
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/PovBSHE3rAo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
      <!-- first row... -->
      <div class="w3-row-padding">
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>Vertex Manipulation (VS & DS)</b></p>
+          <p><b>ANNs</b></p>
           <p>  
-            Centered in the scene is a plane that has been disstorted by a heightmap. The application contains an ordinary plane which has it's vertices disstorted in the 
-            vertex shader from a height map.</p><p> Additionally, a matrix of patches can be swapped into the scene demonstrating not only dynamic tessellation, see below, but also 
-            vertex displacement occurring in the domain shader.
+            Text.
           </p>
         </div>
       </div>
       <div class="w3-third w3-container w3-padding w3-center" >
         <!--image-->
-        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
       </div>
     </div>
-    <div class="w3-row-padding">
-      <div class="w3-third w3-container w3-padding" >
-        <div class="w3-container w3-white">
-          <p><b>Guassian Blur & Box Blur</b></p>
-          <p>  
-            The chosen post processing techniqes were guassian bluring and box blurring. Post-processing takes place after the scene has been initially written to a 
-            render target. A mask is created from the render target and stored in a subsequent texture ready for the blur pass. 
-          </p>
-        </div>
-      </div>
-      <div class="w3-third w3-container w3-padding w3-center" >
-        <!--image-->
-        <img src="../images/shaders.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
-      </div>
-    </div>
-    <!-- next row... -->
-    <div class="w3-row-padding">
-      <div class="w3-third w3-container w3-padding" >
-        <div class="w3-container w3-white">
-          <p><b>Normal Mapping & Normal Sampling</b></p>
-          <p>  
-            The application supports normal mapping the extrapolation of world space normals from texture space by multiplying the coordinates 
-            by the TBN, Tangent, Bi-Tangent and Normal, matrix.</p><p> Additionally, using partial derivatives, a per-vertex and per-pixel normal function was 
-            implemented. This enabled the generation of normals on the fly, adding significant amount of detail on lower resolution height-maps. 
-          </p>
-        </div>
-      </div>
-      <div class="w3-third w3-container w3-padding w3-center" >
-        <!--image-->
-        <img src="../images/tessB1.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
-      </div>
-    </div>
- <!-- third row... -->
- <div class="w3-row-padding">
-  <div class="w3-third w3-container w3-padding" >
-    <div class="w3-container w3-white">
-      <p><b>Dynamic Tessellation</b></p>
-      <p>  
-        A GPU accelerated LOD surface patch algorithm was implemented across the hull shader and domain shader.</p><p> A 12-point control patch was uploaded
-        from the CPU where each patch was tessellated with respects to the camera's position. This enabled high resolution vertex displacement close to 
-        the camera while rendering less geometry further from the camera.
-      </p>
-    </div>
-  </div>
-  <div class="w3-third w3-container w3-padding w3-center" >
-    <!--image-->
-    <img src="../images/tessA.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >
-  </div>
-</div>
-
-<div class="w3-row-padding">
-  <div class="w3-third w3-container w3-padding" >
-    <div class="w3-container w3-white">
-      <p><b>Shadow Mapping</b></p>
-      <p>  
-        Shadow mapping was implemented for directional lighting and spotlights. Both hard shadows and soft shadows are supported. PCF was used as the method for soft shadows, supporting
-        3x3, 5x5 and 7x7 filtering.
-      </p>
-    </div>
-  </div>
+ 
   <div class="w3-third w3-container w3-padding w3-center" >
     <!--image-->
     <img src="../images/shadowPCF3x3.PNG" alt="Graphics Programming in Direct X11" style="width:250%" >

@@ -65,9 +65,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <span class="w3-margin-right"></span> 
 	</div>
 </div>
-
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/-HE2lHyhlRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+<div class = "w3-center">
+<iframe width="720" height="480" src="https://www.youtube.com/embed/-HE2lHyhlRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
   <!-- About engine -->
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
@@ -85,7 +85,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <li>Simple Terrain Sculpting</li>
     </ul>
 
-	
+    <div class="w3-row-padding">
+      <div class="w3-third w3-container w3-padding" >
+        <div class="w3-container w3-white">
+          <p><b>Marching Cubes</b></p>
+          <p> 
+            I implemented marching cubes on the compute shader adapting paul bourke's algorithm initially written on the CPU. 
+          </p>
+          <p>
+            For future, I aim to write an alternative algorithm which takes advantage of GPGPU techniques using a prefix scan to 
+            generate global indices and avoid using atomic increments to store triangles.
+          </p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-padding w3-center" >
+        <!--image-->
+        <!--<video width="720" height="480" controls><source src="../videos/post-fx.mp4" type="video/mp4"></video>-->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1DbnO-MLZTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      </div>
+    </div>
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">

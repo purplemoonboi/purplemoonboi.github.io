@@ -82,20 +82,19 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-padding-large" style="margin-bottom:32px">
     <h4><b>Overview</b></h4>
     <p>
-      As part of the Artifical Intelligence unit of MAT301, I implemented a General Artifical Neural Network to train a collection of entities to race along a track.
+      As part of the Artifical Intelligence unit of MAT301, I implemented a genetic algorithm to train a collection of agents to complete a simple track.
     </p>
-    <p>
-      Entities were rewarded by traveling a distance from the start position as well as for remaining on the track. 
-    </p>
-   
+
     <!-- first row... -->
      <div class="w3-row-padding">
       <div class="w3-third w3-container w3-padding" >
         <div class="w3-container w3-white">
-          <p><b>ANNs</b></p>
+          <p><b>Artificial Neural Networks</b></p>
           <p>  
-            Text.
-          </p>
+            The primary aim of the project was to successfully train agents to complete a simple race track. Each agent is rewarded for traveling the furthest from spawn as well as receiving bonuses for reaching checkpoints without crashing. </p>
+            <p>Each agent contains a neural network. The neural networks are composed of several layers of weights. Initially, the weights are randomised and with each successive generation, successful agents lend their networks to the next generation. </p>
+            <p>In an effort to reflect real world behaviours, each generation is subjected to a trace amount of mutation, which involves slightly modifying the agents weights.</p>
+            <p></p>
         </div>
       </div>
       <div class="w3-third w3-container w3-padding w3-center" >

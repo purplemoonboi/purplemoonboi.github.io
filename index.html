@@ -33,6 +33,8 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
+
+<!--Body-->
 <body class="w3-light-grey w3-content" style="max-width:1600px" onload="on_initialise(); main_load_callback()">
 
 <!-- Sidebar/menu -->
@@ -86,10 +88,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         </div>
   </header>
 
+  <!--PAGE 1-->
   <div id="portfolio">
-  <div id="pg1">
+ 
   <h3 class="w3-container"><b>Projects</b></h3>
-
 
   <!-- First Photo Grid-->
       <div class="w3-row-padding" >
@@ -169,8 +171,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 			<p>As part of a multi-disciplinary team, I helped script game mechanics and create tools for Star Stranded.</p>
 		  </div>
 		</div>
-		
-    
+</div>
 </div>
 
   <!-- Pagination -->
@@ -178,7 +179,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <div class="w3-bar">
       <a href="#" class="w3-bar-item w3-button w3-hover-black" onclick="decriment_page()">«</a>
       <a href="#pg1" class="w3-bar-item w3-black w3-button"onclick="on_page_change(1)">1</a>
-      <!--<a href="#pg2" class="w3-bar-item w3-black w3-button" onclick="on_page_change(2)">2</a>-->
+      <a href="#pg2" class="w3-bar-item w3-black w3-button" onclick="on_page_change(2)">2</a>
       <a href="#" class="w3-bar-item w3-button w3-hover-black" onclick="incriment_page()">»</a>
     </div>
   </div>
@@ -217,7 +218,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		    Hence I switched course and began studying Computer Games Technology in 2019 where I developed a passion for game engine and graphics programming.
     </p>
 		<p> 
-          Outside of programming I like to make 3D art in Blender, I'm a bit rusty, but I enjoy making renders sometimes. Over the years I have gained experience in 
+          Outside of programming I like to make 3D art in Blender and enjoy making renders sometimes. Over the years I have gained experience in 
           3D modelling, rigging bipedal mesh in Blender as well as creating textures and materials in substance designer. Although I don't do much of the latter anymore, I like to jump into Blender and make stuff there!
 		 <p>
           I also like to cook, I'm no michelin star chef but I find the process fun and rewarding. Additionally, for the past year or so, I have been learning French on and off in my spare time. 
@@ -272,6 +273,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
     </form>
   </div>
+</body>
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">
@@ -426,38 +428,6 @@ function on_initialise()
 }
 
 
-function inject_html_element(_index)
-{
-     /*
-    <div class="w3-row-padding" >
-      <div class="w3-third w3-container w3-margin-bottom">
-        <img src="images/Honours.PNG" alt="Honours" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Honours Project</b></p>
-          <p>For my honours, I am researching Isosurface algorithms and evaluating there appropriateness for voxel terrain editors.</p>
-        </div>
-      </div>
-    */
-
-    const element = document.querySelector("#main"); 
-    element.innerHTML += '<div id="main0"><img id="img0"></div>';
-    const div = element.getElementById("main0");
-    div.setAttribute("class", "w3-third w3-container w3-margin-bottom")
-    const img = element.getElementById("img0");
-    img.setAttribute("src", gActiveContext[_index].imageFilePath);
-    img.setAttribute("alt", gActiveContext[_index].name);
-    img.setAttribute("style", "width:100%");
-    img.setAttribute("class", "w3-hover-opacity");
-    
-
-
-
-    console.log("appending element...");
-
-}
-
-
-
 function main_load_callback()
 {
    
@@ -499,5 +469,5 @@ function on_page_change(arg)
 
 </script>
 
-</body>
+
 </html>

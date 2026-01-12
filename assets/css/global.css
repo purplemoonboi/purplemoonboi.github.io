@@ -1,0 +1,67 @@
+/** Global CSS File **/
+
+/* Base body styles */
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--fs-400);
+    line-height: var(--lh-normal);
+    min-height: 100vh;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: var(--lh-tight);
+    color: var(--color-text);
+}
+
+h1 { font-size: var(--fs-900); }
+h2 { font-size: var(--fs-800); }
+h3 { font-size: var(--fs-700); }
+h4 { font-size: var(--fs-600); }
+h5 { font-size: var(--fs-500); }
+h6 { font-size: var(--fs-400); }
+
+/* Links */
+a {
+    color: var(--color-accent);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+}
+
+/* Containers */
+.container {
+    width: min(var(--container-width), 90%);
+    margin: 0 auto;
+}
+
+/* Section spacing */
+section {
+    padding: var(--space-7) 0;
+}
+
+/* Images */
+img {
+    border-radius: var(--radius-sm);
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-muted { color: var(--color-text-muted); }
+
+.flex { display: flex; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+
+.grid { display: grid; gap: var(--space-6); }
+
+/* Global transitions */
+* {
+    transition: background var(--transition-normal),
+                color var(--transition-normal),
+                border-color var(--transition-normal);
+}

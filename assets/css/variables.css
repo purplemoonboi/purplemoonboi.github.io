@@ -1,0 +1,77 @@
+/** CSS Variables File **/
+
+:root {
+    /* Colors */
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f5f5;
+    --color-text: #111111;
+    --color-text-muted: #666666;
+    --color-accent: #4da3ff;
+    --color-accent-hover: #82c3ff;
+    --color-border: #dddddd;
+    --color-success: #4caf50;
+    --color-warning: #ff9800;
+    --color-error: #f44336;
+
+    /* Typography */
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --fs-900: 3rem;
+    --fs-800: 2.25rem;
+    --fs-700: 1.75rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+    --fs-300: 0.875rem;
+    --fs-200: 0.75rem;
+
+    --lh-tight: 1.1;
+    --lh-normal: 1.5;
+    --lh-loose: 1.75;
+
+    /* Spacing */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+
+    /* Radius */
+    --radius-none: 0;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.15);
+
+    /* Layout */
+    --container-width: 1200px;
+    --bp-sm: 600px;
+    --bp-md: 900px;
+    --bp-lg: 1200px;
+
+    /* Motion */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 400ms ease;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+    --color-bg: #0d0d0d;
+    --color-bg-alt: #1a1a1a;
+    --color-text: #e6e6e6;
+    --color-text-muted: #999999;
+    --color-border: #333333;
+    --color-accent: #4da3ff;
+    --color-accent-hover: #82c3ff;
+}

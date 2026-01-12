@@ -1,0 +1,80 @@
+[
+  {
+    "id": "engine-foundation",
+    "title": "Foundation Engine",
+    "description": "A 3D engine built from scratch in C++ with HLSL compute shaders.",
+    "image": "assets/images/projects/foundation.jpg",
+    "tags": ["C++", "HLSL", "Compute"],
+    "featured": true,
+    "content": [
+      "This project involved creating a 3D engine from the ground up using C++ for the core logic and HLSL for compute shaders. ",
+      "The engine supports basic rendering, lighting, and camera controls. It was a challenging yet rewarding experience that deepened",
+      "my understanding of graphics programming and low-level system architecture."
+    ]
+  },
+  {
+    "id": "sdf-renderer",
+    "title": "Real-Time SDF Renderer",
+    "description": "A compute-shader-driven signed distance field renderer using Jump Flooding.",
+    "image": "assets/images/projects/sdf.jpg",
+    "tags": ["C++", "HLSL", "Compute", "Engine"],
+    "featured": true,
+    "content": [
+      "This project implements a real-time SDF pipeline using a compute shader and the Jump Flooding Algorithm.",
+      "The system supports dynamic shapes, smooth blending, and distance-based effects.",
+      "I built this as part of my engine modernization work, focusing on GPU-driven pipelines."
+    ]
+  },
+  {
+    "id": "engine-refactor",
+    "title": "Engine Architecture Refactor",
+    "description": "A full modernization of a custom 3D engine with modular systems and improved tooling.",
+    "image": "assets/images/projects/engine.jpg",
+    "tags": ["C++", "Architecture", "Refactor", "Tools"],
+    "featured": true,
+    "content": [
+      "This was a long-term project to restructure an older engine into a modular, maintainable architecture.",
+      "I introduced a render graph, event dispatcher, improved memory allocators, and a modern build pipeline.",
+      "The refactor dramatically improved iteration speed and debugging clarity."
+    ]
+  },
+  {
+    "id": "portal-xp",
+    "title": "Battlefield Portal XP Mode",
+    "description": "A custom XP farming mode built using Battlefield Portal scripting tools.",
+    "image": "assets/images/projects/portal.jpg",
+    "tags": ["Scripting", "Game Design", "Logic"],
+    "featured": false,
+    "content": [
+      "This project explores the Battlefield Portal scripting system to create a rewarding XP loop.",
+      "I designed custom logic for enemy spawning, scoring, and pacing.",
+      "The mode was built for experimentation and fun, while learning the constraints of Portal scripting."
+    ]
+  },
+  {
+    "id": "allocator-system",
+    "title": "Custom Pool Allocator",
+    "description": "A modern C++ pool allocator with alignment, lifetime management, and debugging tools.",
+    "image": "assets/images/projects/allocator.jpg",
+    "tags": ["C++", "Memory", "Low-Level"],
+    "featured": false,
+    "content": [
+      "This allocator was built to support high-performance engine subsystems.",
+      "It uses fixed-size blocks, alignment guarantees, and explicit lifetime management.",
+      "I also added debugging features like allocation tracking and guard regions."
+    ]
+  },
+  {
+    "id": "sdf-text",
+    "title": "Runtime SDF Text Rendering",
+    "description": "A GPU-driven text rendering system using runtime SDF generation.",
+    "image": "assets/images/projects/sdf-text.jpg",
+    "tags": ["C++", "HLSL", "Compute", "Text Rendering"],
+    "featured": true,
+    "content": [
+      "This project generates signed distance fields for text at runtime using compute shaders.",
+      "It supports crisp scaling, outline effects, and dynamic glyph caching.",
+      "The system integrates into the engine's render graph for efficient batching."
+    ]
+  }
+]

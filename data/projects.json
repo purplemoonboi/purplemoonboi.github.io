@@ -2,9 +2,9 @@
   {
     "id": "engine-foundation",
     "title": "Foundation Engine",
-    "description": "A 3D engine built from scratch in C++ with HLSL compute shaders.",
-    "image": "assets/images/projects/foundation.jpg",
-    "tags": ["C++", "HLSL", "Compute"],
+    "description": "My personal 3D game engine developed in C++",
+    "image": "assets/images/foundation.png",
+    "tags": ["C++", "DX12", "HLSL", "Compute"],
     "featured": true,
     "content": [
       "This project involved creating a 3D engine from the ground up using C++ for the core logic and HLSL for compute shaders. ",
@@ -13,68 +13,83 @@
     ]
   },
   {
-    "id": "sdf-renderer",
-    "title": "Real-Time SDF Renderer",
-    "description": "A compute-shader-driven signed distance field renderer using Jump Flooding.",
-    "image": "assets/images/projects/sdf.jpg",
-    "tags": ["C++", "HLSL", "Compute", "Engine"],
+    "id": "uni-dissertation",
+    "title": "Isosurface Algorithms",
+    "description": "An investigation into Isosurface algorithms, compute shaders and DirectX 12",
+    "image": "assets/images/Banner.png",
+    "tags": ["C++", "DX12", "HLSL", "Compute"],
     "featured": true,
     "content": [
-      "This project implements a real-time SDF pipeline using a compute shader and the Jump Flooding Algorithm.",
-      "The system supports dynamic shapes, smooth blending, and distance-based effects.",
-      "I built this as part of my engine modernization work, focusing on GPU-driven pipelines."
+      "As part of my honours research, I created an application which allowed the user to edit voxel terrain using several techniques. ",
+      "The terrain was polygonised using isosurface techniques, including modified marching cubes and a dual contouring algorithm.",
+      "In an effort to improve the efficiency, both the marching cubes algorithm and dual contouring algorithm were implemented on the GPU through the compute shader."
+      
     ]
   },
   {
-    "id": "engine-refactor",
-    "title": "Engine Architecture Refactor",
-    "description": "A full modernization of a custom 3D engine with modular systems and improved tooling.",
-    "image": "assets/images/projects/engine.jpg",
-    "tags": ["C++", "Architecture", "Refactor", "Tools"],
+    "id": "reforj",
+    "title": "Reforj",
+    "description": "Software Development",
+    "image": "assets/images/Reforj.png",
+    "tags": ["Professional"],
     "featured": true,
     "content": [
-      "This was a long-term project to restructure an older engine into a modular, maintainable architecture.",
-      "I introduced a render graph, event dispatcher, improved memory allocators, and a modern build pipeline.",
-      "The refactor dramatically improved iteration speed and debugging clarity."
+      "Loading..."
     ]
   },
   {
-    "id": "portal-xp",
-    "title": "Battlefield Portal XP Mode",
-    "description": "A custom XP farming mode built using Battlefield Portal scripting tools.",
-    "image": "assets/images/projects/portal.jpg",
-    "tags": ["Scripting", "Game Design", "Logic"],
+    "id": "shaders-dx11",
+    "title": "Graphics Programming with Shaders (DX11)",
+    "description": "A collection of projects exploring and implementing graphics programming techniques in DirectX 11",
+    "image": "assets/images/shaders.png",
+    "tags": ["C++", "DX11", "HLSL", "Tessellation", "Post-Processing", "PCF Shadow Mapping"],
     "featured": false,
     "content": [
-      "This project explores the Battlefield Portal scripting system to create a rewarding XP loop.",
-      "I designed custom logic for enemy spawning, scoring, and pacing.",
-      "The mode was built for experimentation and fun, while learning the constraints of Portal scripting."
+      "Loading..."
     ]
   },
   {
-    "id": "allocator-system",
-    "title": "Custom Pool Allocator",
-    "description": "A modern C++ pool allocator with alignment, lifetime management, and debugging tools.",
-    "image": "assets/images/projects/allocator.jpg",
-    "tags": ["C++", "Memory", "Low-Level"],
+    "id": "procgen-dx11",
+    "title": "Procedural Generation (DX11)",
+    "description": "An application showcasing procedural generation techniques: Perlin Noise, Simplex Noise and Hydraulic Erosion",
+    "image": "assets/images/tools-programming.png",
+    "tags": ["C++", "DX11", "HLSL"],
     "featured": false,
     "content": [
-      "This allocator was built to support high-performance engine subsystems.",
-      "It uses fixed-size blocks, alignment guarantees, and explicit lifetime management.",
-      "I also added debugging features like allocation tracking and guard regions."
+      "Loading..."
     ]
   },
   {
-    "id": "sdf-text",
-    "title": "Runtime SDF Text Rendering",
-    "description": "A GPU-driven text rendering system using runtime SDF generation.",
-    "image": "assets/images/projects/sdf-text.jpg",
-    "tags": ["C++", "HLSL", "Compute", "Text Rendering"],
-    "featured": true,
+    "id": "graphics-opengl",
+    "title": "Graphics Programming in OpenGL",
+    "description": "An application showcasing graphics programming techniques in OpenGL",
+    "image": "assets/images/gfx-programming-opengl-2.png",
+    "tags": ["C++", "OpenGL"],
+    "featured": false,
     "content": [
-      "This project generates signed distance fields for text at runtime using compute shaders.",
-      "It supports crisp scaling, outline effects, and dynamic glyph caching.",
-      "The system integrates into the engine's render graph for efficient batching."
+      "Loading..."
+    ]
+  },
+  {
+    "id": "animation-system",
+    "title": "2D/3D Animation System",
+    "description": "An application showcasing 2D and 3D animation techniques",
+    "image": "assets/images/animation.png",
+    "tags": ["C++", "Animation"],
+    "featured": false,
+    "content": [
+      "Loading..."
+    ]
+  },
+  {
+    "id": "ufd-ue4",
+    "title": "Up For Delivery",
+    "description": "A 3D puzzle game developed in Unreal Engine 4",
+    "image": "assets/images/ufd.jpg",
+    "tags": ["C++", "Unreal Engine 4"],
+    "featured": false,
+    "content": [
+      "Loading..."
     ]
   }
 ]

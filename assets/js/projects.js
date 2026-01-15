@@ -10,7 +10,7 @@ async function loadProjectData() {
 function createProjectCard(project) {
     return `
 <div class="project-card">
-    <a href="project.html?id=${project.id}">
+        <a href="project.html?id=${project.id}">
         <img src="${project.image}" alt="${project.title}">
         <div class="project-card-content">
             <h3 class="project-card-title">${project.title}</h3>

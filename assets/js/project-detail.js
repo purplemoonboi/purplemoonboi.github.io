@@ -1,4 +1,4 @@
-// File: assets/js/project-detail.js
+import { loadDataFromJson } from "./helper.js"
 
 // Get ID from URL
 function getProjectIdFromURL() {
@@ -6,33 +6,26 @@ function getProjectIdFromURL() {
     return params.get('id');
 }
 
-// Load JSON data
-async function loadProjectsData() {
-    const response = await fetch('data/projects.json');
-    return await response.json();
-}
-
 // Find project by ID
 async function loadProjectById(id) {
-    const projects = await loadProjectsData();
+    const projects = await loadDataFromJson('data/projects.json');
     return projects.find(p => p.id === id);
 }
 
 // Render project detail page
 function renderProjectDetail(project) {
     const container = document.getElementById('project-content');
-
     container.innerHTML = `
-        <h1>${project.title}</h1>
-        <img src="${project.image}" alt="${project.title}">
-        <p class="text-muted">${project.description}</p>
-
+        <div class="project-detail">
+            <h1>${project.title}</h1>
+            <img src="${project.image}" alt="${project.title}">
+            <p>${project.description}</p>
         ${project.content.map(paragraph => `<p>${paragraph}</p>`).join('')}
-
-        <div class="mt-4">
-            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+            <div class="mt-4">
+                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+            </div>
         </div>
-    `;
+    `.trim();
 }
 
 // Main loader
@@ -41,12 +34,11 @@ async function loadProjectDetail() {
     const project = await loadProjectById(id);
 
     if (!project) {
-        document.getElementById('project-content').innerHTML = `
-            <h1>Project Not Found</h1>
-            <p>The project you're looking for doesn't exist.</p>
-        `;
+        console.log("[ERROR] Unrecognised project id.")
         return;
     }
 
     renderProjectDetail(project);
 }
+
+loadProjectDetail();

@@ -1,15 +1,5 @@
 /** Global CSS File **/
 
-/* Base body styles */
-body {
-    background: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-sans);
-    font-size: var(--fs-400);
-    line-height: var(--lh-normal);
-    min-height: 100vh;
-}
-
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
@@ -26,23 +16,11 @@ h6 { font-size: var(--fs-400); }
 
 /* Links */
 a {
-    color: var(--color-accent);
-    transition: color var(--transition-fast);
+    color: var(--color-text);
 }
 
 a:hover {
-    color: var(--color-accent-hover);
-}
-
-/* Containers */
-.container {
-    width: min(var(--container-width), 90%);
-    margin: 0 auto;
-}
-
-/* Section spacing */
-section {
-    padding: var(--space-7) 0;
+    color: var(--color-contrast-cool);
 }
 
 /* Images */
@@ -50,18 +28,57 @@ img {
     border-radius: var(--radius-sm);
 }
 
-/* Utility classes */
-.text-center { text-align: center; }
-.text-muted { color: var(--color-text-muted); }
+body {
+    background-image: radial-gradient(circle, var(--color-bg-alt), var(--color-bg));
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--fs-400);
+    line-height: var(--lh-normal);
+    overflow: hidden;
+}
 
-.flex { display: flex; }
-.flex-center { display: flex; justify-content: center; align-items: center; }
+/* Footer */
+footer {
+    padding: var(--space-2) 0;
+    text-align: center;
+    font-size: var(--fs-300);
+    border-top: solid 1px var(--color-bg-alt);
+}
 
-.grid { display: grid; gap: var(--space-6); }
+/* FORMS */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 500px;
+    margin: 0 auto;
+}
 
-/* Global transitions */
-* {
-    transition: background var(--transition-normal),
-                color var(--transition-normal),
-                border-color var(--transition-normal);
+input, textarea {
+    padding: var(--space-3);
+    border: 1px solid var(--color-contrast-cool);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-alt);
+    color: var(--color-text);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-contrast-cool);
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: var(--space-3);
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
 }

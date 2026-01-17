@@ -1,20 +1,67 @@
-/** Components CSS File **/
-
-/* NAVIGATION */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-4) 0;
+.fade-section{
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 1.0s ease-out, transform 1.0s ease-out;
 }
 
-nav a {
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Sections */
+.header-section {
+    width: min(1200px, 90%);
+    margin: auto;
+    padding: var(--space-4);
+    border-bottom: solid 1px var(--color-contrast-muted);
+    text-align: center;
+}
+
+.header-section h1 {
+    padding: var(--space-6);
+}
+
+.header-section p {
+    padding: var(--space-4);
+}
+
+.header-section h4 {
+    padding: var(--space-6);
+}
+
+.inner-section {
+    width: min(1200px, 90%);
+    margin: auto;
+    padding: var(--space-4);
+    border-bottom: solid 1px var(--color-contrast-muted);
+}
+
+.inner-section h1 {
+    padding: var(--space-4);
+}
+
+/* Navigation Bar */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: var(--space-4);
+    border-bottom: solid 1px var(--color-contrast-muted);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+.nav-bar a {
     margin-left: var(--space-4);
     font-size: var(--fs-400);
     font-weight: 500;
 }
 
-nav a:first-child {
+.nav-bar a:first-child {
     margin-left: 0;
 }
 
@@ -22,129 +69,51 @@ nav a:first-child {
     display: none;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: var(--space-4);
-    }
+/* CARDS */
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: var(--space-3);
-    }
-
-    .nav-toggle {
-        display: block;
-        cursor: pointer;
-    }
-}
-
-/* BUTTONS */
-.btn {
-    display: inline-block;
-    padding: var(--space-3) var(--space-5);
-    background: var(--color-accent);
-    color: var(--color-bg);
-    border-radius: var(--radius-md);
-    font-weight: 500;
-    transition: background var(--transition-fast);
-}
-
-.btn:hover {
-    background: var(--color-accent-hover);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--color-accent);
-    color: var(--color-accent);
-}
-
-.btn-outline:hover {
-    background: var(--color-accent);
-    color: var(--color-bg);
-}
-
-/* PROJECT CARDS */
-.project-card {
+.card {
+    padding: var(--space-2);
     background: var(--color-bg-alt);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-contrast-cool);
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.project-card:hover {
+.card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
 
-.project-card img {
+.card img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 
-.project-card-content {
+.card-content {
     padding: var(--space-4);
 }
 
-.project-card-title {
+.card-title {
     font-size: var(--fs-600);
     margin-bottom: var(--space-2);
 }
 
-.project-card-desc {
+.card-desc {
     font-size: var(--fs-300);
     color: var(--color-text-muted);
 }
 
-/* HERO SECTION */
-#hero {
-    padding: var(--space-8) 0;
-    text-align: center;
+.project-detail {
+    width: min(1200px, 90%);
+    margin: auto;
 }
 
-#hero h1 {
-    font-size: var(--fs-900);
-    margin-bottom: var(--space-3);
-}
-
-#hero p {
-    font-size: var(--fs-500);
-    color: var(--color-text-muted);
-}
-
-/* FOOTER */
-footer {
-    padding: var(--space-5) 0;
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: var(--fs-300);
-    border-top: 1px solid var(--color-border);
-}
-
-/* FORMS */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-input, textarea {
-    padding: var(--space-3);
-    border: 1px solid var(--color-border);
+.project-detail img {
     border-radius: var(--radius-md);
-    background: var(--color-bg-alt);
-    color: var(--color-text);
-}
-
-input:focus, textarea:focus {
-    border-color: var(--color-accent);
-    outline: none;
+    padding: var(--space-2);
 }
 
 /* TAGS */
@@ -157,9 +126,66 @@ input:focus, textarea:focus {
     color: var(--color-text-muted);
 }
 
-/* SECTION HEADERS */
-.section-title {
-    font-size: var(--fs-700);
-    margin-bottom: var(--space-4);
-    text-align: center;
+.parallax-layer {
+    will-change: transform;
+    transition: transform 0.05s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;       /* or 'contain' or 'repeat' */
+    z-index: -1;                  
+
+    animation: parallax-move linear both;
+}
+
+@supports (animation-timeline: view()) {
+    .parallax-layer {
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+    }
+}
+
+@keyframes parallax-move {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(0px); /* adjust for stronger parallax */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .my-selector {
+    animation: none !important;
+  }
+}
+
+.typewriter {
+    display: inline-block;              /* important: width can animate */
+    overflow: hidden;                   /* hide the text beyond current width */
+    white-space: nowrap;                /* keep it on one line */
+    border-right: 2px solid #fff;       /* cursor */
+    animation: typing 2s steps(14, end) forwards,
+               blink 0.7s step-end infinite;
+}
+
+/* adjust steps() to match character count of your text */
+@keyframes typing {
+    from { width: 0 }
+    to   { width: 14ch; }               /* 14 characters in "Hi, I'm Rhys!" */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+@media (max-width: 768px) {
+
+    .inner-section h1 {
+        font-size: var(--fs-600);
+    }
+
 }

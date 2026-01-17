@@ -1,0 +1,55 @@
+/* PROJECTS PAGE */
+#project-list {
+    padding: var(--space-4);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.card-list {
+    padding: var(--space-4);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+/* ABOUT PAGE */
+.about-me{
+    padding: var(--space-4);
+}
+
+#bio {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#bio img {
+    width: 100%;
+    border-radius: var(--radius-md);
+}
+
+/* CONTACT PAGE */
+#contact-form {
+    margin-top: var(--space-6);
+}
+
+#contact-form button {
+    margin-top: var(--space-4);
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    #bio {
+        grid-template-columns: 1fr;
+    }
+
+    #project-list {
+        display: flex;
+        flex-flow: column;
+    }
+
+    #experience-list {
+        display: flex;
+        flex-flow: column;
+    }
+}

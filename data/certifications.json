@@ -1,0 +1,20 @@
+[
+  {
+    "id": "software-dev",
+    "type": 0,
+    "title": "4J Studios - Graduate Software Developer",
+    "description": ["Current full-time employed role."]
+  },
+  {
+    "id": "uni-undergrad",
+    "type": 1,
+    "title": "Computer Games Technology (BSc)",
+    "description": ["A university degree obtained at Abertay University of Dundee. Grade: First-Class"]
+  },
+  {
+    "id": "full-stack-course",
+    "type": 2,
+    "title": "Full-Stack Development (Microsoft)",
+    "description": ["An online certification obtained from Coursera. Grade: (TBC)"]
+  }
+]

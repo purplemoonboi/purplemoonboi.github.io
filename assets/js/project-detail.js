@@ -16,13 +16,13 @@ async function loadProjectById(id) {
 function renderProjectDetail(project) {
     const container = document.getElementById('project-content');
     container.innerHTML = `
-        <div class="project-detail">
+        <div class="project-container">
             <h1>${project.title}</h1>
             <img src="${project.image}" alt="${project.title}">
             <p>${project.description}</p>
-        ${project.content.map(paragraph => `<p>${paragraph}</p>`).join('')}
-            <div class="mt-4">
-                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+            ${project.content.map(paragraph => `<p>${paragraph}</p>`).join('')}
+            <div class="tag-container">
+                ${project.tags.map(tag => `<span class="tag-item">${tag}</span>`).join(' ')}
             </div>
         </div>
     `.trim();

@@ -13,21 +13,6 @@
     gap: var(--space-6);
 }
 
-/* ABOUT PAGE */
-.about-me{
-    padding: var(--space-4);
-}
-
-#bio {
-    padding-left: 0%;
-    padding-right: 0%;
-}
-
-#bio img {
-    width: 100%;
-    border-radius: var(--radius-md);
-}
-
 /* CONTACT PAGE */
 #contact-form {
     margin-top: var(--space-6);
@@ -36,6 +21,14 @@
 #contact-form button {
     margin-top: var(--space-4);
     align-self: flex-start;
+}
+
+.cv-container {
+    width: min(1200px, 90%);
+    height: auto;
+    margin: auto;
+    padding: var(--space-4);
+    border-bottom: solid 1px var(--color-contrast-muted);
 }
 
 @media (max-width: 768px) {

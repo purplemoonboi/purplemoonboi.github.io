@@ -2,14 +2,12 @@
   {
     "id": "engine-foundation",
     "title": "Foundation Engine",
-    "description": "My personal 3D game engine developed in C++",
+    "description": "An ongoing personal project exploring Game Engine development in C++.",
     "image": "assets/images/foundation.png",
     "tags": ["C++", "DX12", "HLSL", "Compute"],
     "featured": true,
     "content": [
-      "This project involved creating a 3D engine from the ground up using C++ for the core logic and HLSL for compute shaders. ",
-      "The engine supports basic rendering, lighting, and camera controls. It was a challenging yet rewarding experience that deepened",
-      "my understanding of graphics programming and low-level system architecture."
+      "Loading..."
     ]
   },
   {
@@ -20,10 +18,7 @@
     "tags": ["C++", "DX12", "HLSL", "Compute"],
     "featured": true,
     "content": [
-      "As part of my honours research, I created an application which allowed the user to edit voxel terrain using several techniques. ",
-      "The terrain was polygonised using isosurface techniques, including modified marching cubes and a dual contouring algorithm.",
-      "In an effort to improve the efficiency, both the marching cubes algorithm and dual contouring algorithm were implemented on the GPU through the compute shader."
-      
+      "Loading..."
     ]
   },
   {
@@ -40,10 +35,10 @@
   {
     "id": "shaders-dx11",
     "title": "Graphics Programming with Shaders (DX11)",
-    "description": "A collection of projects exploring and implementing graphics programming techniques in DirectX 11",
+    "description": "A project showcasing several graphics programming techniques including: Normal Mapping, Tessellation, Shadow Mapping and Bloom.",
     "image": "assets/images/shaders.png",
     "tags": ["C++", "DX11", "HLSL", "Tessellation", "Post-Processing", "PCF Shadow Mapping"],
-    "featured": false,
+    "featured": true,
     "content": [
       "Loading..."
     ]
@@ -51,10 +46,10 @@
   {
     "id": "procgen-dx11",
     "title": "Procedural Generation (DX11)",
-    "description": "An application showcasing procedural generation techniques: Perlin Noise, Simplex Noise and Hydraulic Erosion",
+    "description": "A project showcasing procedural generation techniques including: Perlin Noise, Trochoidal Waves and Hydraulic Erosion.",
     "image": "assets/images/tools-programming.png",
-    "tags": ["C++", "DX11", "HLSL"],
-    "featured": false,
+    "tags": ["C++", "DX11", "HLSL", "Perlin Noise", "Simplex Noise", "Trochoidal Waves", "Hydraulic Erosion"],
+    "featured": true,
     "content": [
       "Loading..."
     ]
@@ -87,7 +82,7 @@
     "description": "A 3D puzzle game developed in Unreal Engine 4",
     "image": "assets/images/ufd.jpg",
     "tags": ["C++", "Unreal Engine 4"],
-    "featured": false,
+    "featured": true,
     "content": [
       "Loading..."
     ]

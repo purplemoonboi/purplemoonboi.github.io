@@ -37,12 +37,34 @@ body {
     overflow: hidden;
 }
 
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+}
+
 /* Footer */
 footer {
-    padding: var(--space-2) 0;
-    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     font-size: var(--fs-300);
-    border-top: solid 1px var(--color-bg-alt);
+    border-top: solid 1px var(--color-contrast-muted);
+    backdrop-filter: blur(4px);
+    z-index: 1;
 }
 
 /* FORMS */

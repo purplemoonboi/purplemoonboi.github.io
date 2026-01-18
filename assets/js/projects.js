@@ -3,7 +3,7 @@ import { loadDataFromJson } from "./helper.js"
 // Create project card HTML
 function createProjectCard(project) {
     return `
-<div class="card">
+<div class="card-container">
         <a href="project.html?id=${project.id}">
         <img src="${project.image}" alt="${project.title}">
         <div class="card-content">
@@ -17,7 +17,7 @@ function createProjectCard(project) {
 
 function createExperienceCard(experience) {
     return `
-<div class="card">
+<div class="card-container">
         <div class="card-content">
             <h3 class="card-title">${experience.title}</h3>
             <p class="card-desc">${experience.description}</p>

@@ -23,12 +23,17 @@
     align-self: flex-start;
 }
 
-.cv-container {
-    width: min(1200px, 90%);
-    height: auto;
-    margin: auto;
-    padding: var(--space-4);
-    border-bottom: solid 1px var(--color-contrast-muted);
+.bloom {
+  position: relative;
+}
+
+.bloom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit; /* copies the element’s background/image */
+  filter: blur(12px) brightness(1.6);
+  z-index: -1;
 }
 
 @media (max-width: 768px) {

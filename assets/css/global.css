@@ -28,6 +28,20 @@ img {
     border-radius: var(--radius-sm);
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
 body {
     background-image: radial-gradient(circle, var(--color-bg-alt), var(--color-bg));
     color: var(--color-text);
@@ -52,19 +66,6 @@ section {
     flex-flow: column;
     align-items: center;
     position: relative;
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: var(--fs-300);
-    border-top: solid 1px var(--color-contrast-muted);
-    backdrop-filter: blur(4px);
-    z-index: 1;
 }
 
 /* FORMS */

@@ -21,6 +21,16 @@
     gap: var(--space-4);
 }
 
+.grid-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.grid-row {
+    padding: var(--space-2);
+}
+
 /* Spacing utilities */
 .mt-1 { margin-top: var(--space-1); }
 .mt-2 { margin-top: var(--space-2); }

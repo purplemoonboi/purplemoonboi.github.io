@@ -57,29 +57,68 @@ async function loadAllExperienceData() {
     renderCards(certifications, 'certification-list', createExperienceCard);
 }
 
-// GLOBALS
-const scroller = document.querySelector("main");
-
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('.fade-section');
+    const main = document.querySelector('main');
+    const sections = document.querySelectorAll('section');
+
+    const navbar = document.querySelector(".nav-bar");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const fadeSection = document.querySelectorAll(".fade-section"); 
 
     if ('IntersectionObserver' in window) {
+
+        // Do visiblity check for each major section of the 
+        // index page. If intersecting, add the 'visible' class
+        // to that section - rendering the section visible.
         const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-            } else {
-            }
+            } 
         });
         }, {
-            threshold: 0.15,          // 15% of the section must be visible
-            rootMargin: "0px 0px -10% 0px" // trigger slightly before entering
+            threshold: 0.15,                // 15% of the section must be visible
+            rootMargin: "0px 0px -10% 0px"  // trigger slightly before entering
         });
 
-        sections.forEach(section => observer.observe(section));
+        fadeSection.forEach(section => observer.observe(section));
+
+        // Update the navigation link highlight to whichever 
+        // section the user is currently viewing. 
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute("id");
+                    navLinks.forEach(link => link.classList.remove("active"));
+                    document.querySelector(`.nav-link[href="#${id}"]`).classList.add("active");
+                }
+            });
+        }, {threshold: 0.5});
+    
+        sections.forEach(sec => navObserver.observe(sec));
     }
+
+    // Update the highlight animation so they animate in/out
+    // with respect to the scroll direction.
+    let prevScrollY = main.scrollTop;
+    main.addEventListener("scroll", () => {
+        const currentScrollY = main.scrollTop;
+
+        if(currentScrollY > prevScrollY)
+        {
+            navbar.classList.add("scroll-up");
+            navbar.classList.remove("scroll-down");
+        }
+        else
+        {
+            navbar.classList.add("scroll-down");
+            navbar.classList.remove("scroll-up");
+        }
+
+        prevScrollY = currentScrollY;
+    });
+
+
+    loadFeaturedProjectData();
+    loadAllExperienceData();
 });
-
-loadFeaturedProjectData();
-loadAllExperienceData();
-

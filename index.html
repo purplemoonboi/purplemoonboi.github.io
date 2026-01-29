@@ -1,97 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Rhys — Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/variables.css">
-    <link rel="stylesheet" href="assets/css/global.css">
-    <link rel="stylesheet" href="assets/css/layout.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/sections.css">
-    <script src="https://kit.fontawesome.com/cbcb99d2a1.js" crossorigin="anonymous"></script>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="nav-bar">
-            <a class="nav-link" href="#home">Home</a>
-            <a class="nav-link" href="#featured">Projects</a>
-            <a class="nav-link" href="#experience">Experience</a>
-            <a class="nav-link" href="#contact">Contact</a>
-        </div>
+      <div class="nav-bar">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#featured">Projects</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
     </header>
-
+    <!-- https://www.youtube.com/embed/GhXNqHY734o?rel=0 -->
     <main>
-        <!--Hero-->
-        <section id="home" class="fade-section">
-            <div class="header-container horizontal-separator">
-                <h1 class="typewriter">Hi, I'm Rhys!</h1>
-                <h4>Software Developer</h4>
-            </div>
-        </section>
+      <section id="home" class="fade-section">
+        <div class="section-container header-container">
+          <div class="horizontal-separator">
+            <h1 class="typewriter">Hi, I'm Rhys!</h1>
+            <h4>Software Developer</h4>
+          </div>
+          <div class="video-container">
+            <iframe
+              src=""
+              title="YouTube video player"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
 
-        <section id="featured" class="fade-section">
-            <div class="section-container">
-                <h1>Featured Projects</h1>
-                <div id="project-list"></div>
-            </div>
-        </section>
+      <section id="featured" class="fade-section">
+        <div class="section-container project-section-container">
+          <h1>Featured Projects</h1>
+          <div class="project-list-container" id="project-list"></div>
+        </div>
+      </section>
 
-        <!--Experience-->
-        <section id="experience" class="fade-section">
-            <div class="section-container">
-                <h1>Employment</h1>
-                <div id="employment-list" class="card-list">
-                    <!--certification cards are injected-->
-                </div>
-                <h1>Education</h1>
-                <div id="education-list" class="card-list">
-                    <!--education cards are injected-->
-                </div>
-                <h1>Certifications</h1>
-                <div id="certification-list" class="card-list">
-                    <!--certification cards are injected-->
-                </div>
-            </div>
-        </section>
+      <!--Experience-->
+      <section id="experience" class="fade-section">
+        <div class="section-container experience-section-container">
+          <h1>Employment</h1>
+          <div id="employment-list" class="card-list">
+            <!--certification cards are injected-->
+          </div>
+          <h1>Education</h1>
+          <div id="education-list" class="card-list">
+            <!--education cards are injected-->
+          </div>
+          <h1>Certifications</h1>
+          <div id="certification-list" class="card-list">
+            <!--certification cards are injected-->
+          </div>
+        </div>
+      </section>
 
-        <!-- Contact -->
-        <section id="contact" class="fade-section">
-            <div class="section-container">
-                <h1>Contact</h1>
-                <div class="grid-column">
-                    <div class="grid-row">
-                        <form id="contact-form">
-                            <label>Name</label>
-                            <input type="text" required>
-                            <label>Email</label>
-                            <input type="email" required>
-                            <label>Message</label>
-                            <textarea required></textarea>
-                            <button class="button-style" type="submit">Send</button>
-                        </form>
-                    </div>
-                    <div class="grid-row vertical-separator flex-center">
-                        <div id="contact-info">
-                            <ul class="flex-column ">
-                                <i class="fa-solid fa-phone">07795 422 756</i>
-                                <i class="fa-solid fa-at">purplemoonone@gmail.com</i>
-                                <i class="fa-brands fa-linkedin">LinkedIn</i>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <!-- Contact -->
+      <section id="contact" class="fade-section">
+        <div class="section-container contact-form-container">
+          <h1>Contact</h1>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Name" required />
+              <span class="error-message" id="name-error"></span>
             </div>
-        </section>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your Phone Number"
+                required
+              />
+              <span class="error-message" id="phone-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                rows="4"
+                required
+              ></textarea>
+              <span class="error-message" id="message-error"></span>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer">
-            <p>© 2026 Rhys</p>
-        </div>
+      <div class="footer">
+        <p>© 2026 Rhys</p>
+      </div>
     </footer>
     <script type="module" src="assets/js/projects.js"></script>
-</body>
+  </body>
 </html>

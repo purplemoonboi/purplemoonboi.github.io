@@ -12,21 +12,56 @@ async function loadProjectById(id) {
     return projects.find(p => p.id === id);
 }
 
-// Render project detail page
+function resolveMediaElement(media){
+    // Resolve media element based on type, returns either a video-clip or an image.
+    if(media.type==="video" && media.source){
+        return `<div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/${media.source}?rel=0"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>`.trim();
+    }
+    else if (media.type==="image" && media.source) {
+        return `<div class="flex"><img src="${media.source}" alt="${media.alt}"></img></div>`.trim();
+    }
+    return ``;
+}
+
 function renderProjectDetail(project) {
     const container = document.getElementById('project-content');
+
+    // Main media (video or image)
+    const overview = resolveMediaElement(project.media);
+
+    // Build content blocks
+    let content = ``;
+
+    for (let entry of project.content) {
+        const titleHTML = `<h2>${entry.title}</h2>`;
+        const mediaHTML = resolveMediaElement(entry.media);
+        const descHTML = entry.description 
+            ? `<p>${entry.description}</p>` 
+            : ``;
+
+        content +=  titleHTML + `<div >` + mediaHTML + descHTML + `</div>`;
+    }
+
+    // Inject into DOM
     container.innerHTML = `
         <div class="project-container">
             <h1>${project.title}</h1>
-            <img src="${project.image}" alt="${project.title}">
-            <p>${project.description}</p>
-            ${project.content.map(paragraph => `<p>${paragraph}</p>`).join('')}
+            ${overview}
+            <p>${project.overview}</p>
+            ${content}
             <div class="tag-container">
                 ${project.tags.map(tag => `<span class="tag-item">${tag}</span>`).join(' ')}
             </div>
         </div>
     `.trim();
 }
+
 
 // Main loader
 async function loadProjectDetail() {
@@ -41,4 +76,11 @@ async function loadProjectDetail() {
     renderProjectDetail(project);
 }
 
-loadProjectDetail();
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll(".nav-link");
+    const fadeSection = document.querySelectorAll(".fade-section"); 
+
+    loadProjectDetail();
+});
+

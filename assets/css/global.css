@@ -1,107 +1,132 @@
 /** Global CSS File **/
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: var(--lh-tight);
-    color: var(--color-text);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--color-text);
 }
 
-h1 { font-size: var(--fs-900); }
-h2 { font-size: var(--fs-800); }
-h3 { font-size: var(--fs-700); }
-h4 { font-size: var(--fs-600); }
-h5 { font-size: var(--fs-500); }
-h6 { font-size: var(--fs-400); }
+h1 {
+  font-size: var(--fs-900);
+}
+h2 {
+  font-size: var(--fs-800);
+}
+h3 {
+  font-size: var(--fs-700);
+}
+h4 {
+  font-size: var(--fs-600);
+}
+h5 {
+  font-size: var(--fs-500);
+}
+h6 {
+  font-size: var(--fs-400);
+}
 
 /* Links */
 a {
-    color: var(--color-text);
+  color: var(--color-text);
 }
 
 a:hover {
-    color: var(--color-contrast-cool);
+  color: var(--color-contrast-cool);
 }
 
 /* Images */
 img {
-    border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm);
 }
 
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 body {
-    background-image: radial-gradient(circle, var(--color-bg-alt), var(--color-bg));
-    color: var(--color-text);
-    font-family: var(--font-sans);
-    font-size: var(--fs-400);
-    line-height: var(--lh-normal);
-    overflow: hidden;
+  background-image: radial-gradient(
+    circle,
+    var(--color-bg-alt),
+    var(--color-bg)
+  );
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-400);
+  line-height: var(--lh-normal);
+  overflow: hidden;
 }
 
 main {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 section {
-    min-height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    position: relative;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
 }
 
 /* FORMS */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    max-width: 500px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-input, textarea {
-    padding: var(--space-3);
-    border: 1px solid var(--color-contrast-cool);
-    border-radius: var(--radius-md);
-    background: var(--color-bg-alt);
-    color: var(--color-text);
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--color-text);
 }
 
-input:focus, textarea:focus {
-    border-color: var(--color-contrast-cool);
-    outline: none;
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-contrast-cool);
+  outline: none;
 }
 
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-
-    .nav-links {
-        flex-direction: row;
-        gap: var(--space-3);
-    }
-
-    .nav-toggle {
-        display: block;
-        cursor: pointer;
-    }
+  nav {
+    flex-direction: column;
+  }
 }

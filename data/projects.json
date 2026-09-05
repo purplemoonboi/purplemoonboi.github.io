@@ -1,38 +1,40 @@
 [
-    {
+  {
     "id": "reforj",
     "title": "Reforj",
     "thumbnail": "assets/images/reforj.png",
     "description": "An open world sandbox developed at 4J Studios",
     "media": { "type": "image", "source": "assets/images/reforj.png" },
-    "overview": "I worked on reforj as part of the tools and engine team at 4J Studios. My main contributions to the project included developing and maintaining various tools and systems to support the game's development. This involved working closely with other teams to ensure that the tools met their needs and were easy to use. Additionally, I was responsible for implementing the backend for the UI system.",
-    "content": [
-      {
-        "title": "Software Development",
-        "media": { "type": "image", "source": "", "alt": "" },
-        "description": ""
-      }
-    ],
+    "overview": "At 4J Studios I worked on engine and UI features across our internal tools and game projects. My main focus was integrating the Noesis rendering backend with our in‑house rendering engine, making sure the pipeline behaved consistently and played nicely with the rest of the tech. I also built several in‑game UI scenes using Noesis, working with view‑models and XAML to support designer‑driven workflows. Outside of UI, I implemented post‑processing effects such as bloom, vignette, and depth of field. A big part of my time was spent on internal tools for artists and designers. This included various small editors and utilities, but most notably the in‑house texture editor, which I helped extend and maintain as it became a core part of the content pipeline. Overall, my role was about contributing practical, reliable features to the engine and tools team, and helping improve the workflows used across the studio.",
+    "content": [{"title": "", "media": { "type": "", "source": "" }, "description": "" }],
     "tags": ["Console Development", "C++", "UI Development"],
     "featured": true
   },
   {
     "id": "dissertation",
-    "title": "Isosurface Algorithms",
+    "title": "Isosurface Algorithms (DX12)",
     "thumbnail": "assets/images/banner.png",
-    "description": "Isosurface algorithms in DX12",
-    "media": { "type": "video", "source": "-HE2lHyhlRY" },
-    "overview": "As part of my honours research, I created an application which allowed the user to edit voxel terrain using several techniques. The terrain was polygonised using isosurface techniques, including modified marching cubes and a dual contouring algorithm. In an effort to improve the efficiency, both the marching cubes algorithm and dual contouring algorithm were implemented on the GPU through the compute shader.",
+    "description": "Marching Cubes, Surface Nets and Dual Contouring implemented on the GPU",
+    "media": {},
+    "overview": "My honours research explored and evaluated isosurface algorithms, implementing marching cubes and surface nets on the GPU. I built an interactive terrain editor which allowed the user to create, remove and sculpt terrain in real-time.",
     "content": [
       {
         "title": "Marching Cubes",
-        "media": { "type": "image", "source": "assets/images/marching-cubes-textured.png", "alt": "A wireframe render of marching cubes terrain." },
-        "description": "I implemented marching cubes on the compute shader adapting paul bourke's algorithm initially written on the CPU. For future, I aim to write an alternative algorithm which takes advantage of GPGPU techniques using a prefix scan to generate global indices and avoid using atomic increments to store triangles."
+        "media": {
+          "type": "image",
+          "source": "assets/images/marching-cubes-textured.png",
+          "alt": "A wireframe render of marching cubes terrain."
+        },
+        "description": "Marching Cubes was implemented in a compute shader using . The algorithm evaluates a uniform cubic grid of scalar points, checking each cell corner against an isovalue to determine which parts of the cell are within or outside of the isosurface. An integer is generated, based on the number of active corners, which is used to look-up a table of pre-configured edges representing the layout of the triangles."
       },
       {
         "title": "Dual Contouring",
-        "media": { "type": "image", "source": "assets/images/dual-contouring-wire.png", "alt":"A wireframe render of surface nets terrain." },
-        "description": "I implemented Surface Nets on the compute shader based on some psuedo code aquired from a paper discussing the Isosurface algorithm. "
+        "media": {
+          "type": "image",
+          "source": "assets/images/dual-contouring-wire.png",
+          "alt": "A wireframe render of surface nets terrain."
+        },
+        "description": "The second isosurface algorithm I explored was the Dual-Contouring algorithm. Unlike the Marching Cubes algorithm, Dual Contouring generates precisely one vertex per cell and considers the sign change along the edge of the cell. A sign change is indicative that the isosurface passed through that edge. The Surface Nets algorithm places a vertex in the center of a cell, whereas Dual Contouring uses an quadratic error function to determine the best position to place the vertex. Both dual-algorithms generates clean geometry and are better suited at preserving sharp features."
       }
     ],
     "tags": ["DX12", "Marching Cubes", "Dual Contouring", "Isosurface"],
@@ -43,35 +45,54 @@
     "title": "Foundation Engine",
     "thumbnail": "assets/images/foundation.png",
     "description": "An on going personal project exploring game engine development",
-    "media": { "type": "image", "source": "assets/images/foundation.png", "alt": "An image of the foundation engine editor." },
+    "media": {
+      "type": "image",
+      "source": "assets/images/foundation.png",
+      "alt": "An image of the foundation engine editor."
+    },
     "overview": "Foundation Engine is an ongoing personal project where I explore game engine development. The main focus of the project is to explore and research how systems are architected and the intercommunications between these systems.",
     "content": [
       {
         "title": "Graphics",
-        "media": { "type": "image", "source": "assets/images/mc-wireframe-3.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/mc-wireframe-3.png",
+          "alt": ""
+        },
         "description": "The foundation engine has seen a couple of rendering back-ends, from OpenGL 4.6 to DirectX 12. Currently, the rendering interface is implemented through NVRHI, Nvidia's abstracted rendering interface."
       },
       {
         "title": "ENTT",
-        "media": { "type": "image", "source": "assets/images/sn-wireframe.png", "alt":"" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/sn-wireframe.png",
+          "alt": ""
+        },
         "description": "Integrated into the world context (also referred to as the 'scene'), ENTT serves as the engine's main entity component system (ECS), enforcing a component based architecture. The world context owns and manages the entity registry, where entities are made accessible. Foundation also supports scriptable entities, allowing for custom behaviours and logic."
       },
       {
         "title": "Services Registry",
-        "media": { "type": "image", "source": "assets/images/sn-wireframe.png", "alt":"" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/sn-wireframe.png",
+          "alt": ""
+        },
         "description": "A debated topic in the game engine communicated, a services registry is implemented adhering to the service locator pattern, supporting global access to engine subsystems, like the file manager. An instance of the services registry is created in the core application and injected into each layer of the application. Long term, I'm aiming to refactor the service locator, and instead manage and expose subsystems within relevant contexts. For instance, the world context will own the AI Subsystem, which wil be made available to all scriptable entities. This approach should avoid global access and highlight dependencies."
       }
-
     ],
     "tags": ["DX12", "Game Engine", "ENTT"],
-    "featured": true
+    "featured": false
   },
   {
     "id": "gfx-shaders-dx11",
-    "title": "Graphics Programming with Shaders (DX11)",
+    "title": "Graphics Programming (DX11)",
     "thumbnail": "assets/images/shaders.png",
     "description": "Showcasing several graphics programming techniques in shaders",
-    "media": { "type": "image", "source": "assets/images/shaders.png", "alt": "A screenshot of the DX11 scene rendering several graphics techniques." },
+    "media": {
+      "type": "image",
+      "source": "assets/images/shaders.png",
+      "alt": "A screenshot of the DX11 scene rendering several graphics techniques."
+    },
     "overview": "",
     "content": [
       {
@@ -81,54 +102,80 @@
       },
       {
         "title": "Dynamic Tessellation",
-        "media": { "type": "video", "source": "oc0YdyDHeKA", "alt":"" },
+        "media": { "type": "video", "source": "oc0YdyDHeKA", "alt": "" },
         "description": "A GPU accelerated LOD surface patch algorithm was implemented across the hull shader and domain shader. A 12-point control patch was uploaded from the CPU where each patch was tessellated with respects to the camera's position. This enabled high resolution vertex displacement close to the camera while rendering less geometry further from the camera."
       },
       {
         "title": "Gaussian Bloom",
-        "media": { "type": "video", "source": "1DbnO-MLZTI", "alt":"" },
+        "media": { "type": "video", "source": "1DbnO-MLZTI", "alt": "" },
         "description": "The chosen post processing techniqes were guassian bluring and box blurring. Post-processing takes place after the scene has been initially written to a render target. A mask is created from the render target and stored in a subsequent texture ready for the blur pass. "
       },
       {
         "title": "Shadow Mapping (PCF)",
-        "media": { "type": "video", "source": "e_ldQvDD-K4", "alt":"" },
+        "media": { "type": "video", "source": "e_ldQvDD-K4", "alt": "" },
         "description": "Shadow mapping was implemented for directional lighting and spotlights. Both hard shadows and soft shadows are supported. PCF was used as the method for soft shadows, supporting 3x3, 5x5 and 7x7 filtering."
       },
       {
         "title": "Normal Mapping",
-        "media": { "type": "video", "source": "Zz8hVtZc1lY", "alt":"" },
+        "media": { "type": "video", "source": "Zz8hVtZc1lY", "alt": "" },
         "description": "The application supports normal mapping the extrapolation of world space normals from texture space by multiplying the coordinates by the TBN, Tangent, Bi-Tangent and Normal, matrix. Additionally, using partial derivatives, a per-vertex and per-pixel normal function was implemented. This enabled the generation of normals on the fly, adding significant amount of detail on lower resolution height-maps. "
       }
     ],
-    "tags": ["DX11", "Tessellation", "Bloom", "Normal Mapping", "Shadow Mapping (PCF)"],
+    "tags": [
+      "DX11",
+      "Tessellation",
+      "Bloom",
+      "Normal Mapping",
+      "Shadow Mapping (PCF)"
+    ],
     "featured": true
   },
   {
     "id": "proc-gen-dx11",
     "title": "Procedural Generation (DX11)",
     "thumbnail": "assets/images/tools-programming.png",
-    "description": "Showcasing procedural generation techniques in DX11",
-    "media": { "type": "image", "source": "assets/images/tools-programming.png", "alt": "A screenshot of the DX11 scene rendering a height map and procedural waves." },
+    "description": "An application showcasing several procedural generation techniques implemented on the CPU and GPU",
+    "media": {
+      "type": "image",
+      "source": "assets/images/tools-programming.png",
+      "alt": "A screenshot of the DX11 scene rendering a height map and procedural waves."
+    },
     "overview": "In the procedural methods module I implemented several procedural techniques on the CPU. The following techniques were implemented in a DX11 framework: Hydraulic Erosion, Trochoidial Waves, Voronoi Noise (GPU), Simplex Noise, Perlin Noise, Improved Perlin Noise, Octave Perlin Noise, Ridged Perlin Noise",
     "content": [
       {
         "title": "Perlin Noise",
-        "media": { "type": "image", "source": "assets/images/hydroerosion.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/hydroerosion.png",
+          "alt": ""
+        },
         "description": "Perlin Noise serves as the basis for most of the procedural techniques in this project. The perlin algorithm was implemented in C++ using the original C implemnetation as reference. Additionally, the improved perlin algorithm as well as the Simplex noise algorithms were implemented and can be used to drive the terrain generator."
       },
       {
         "title": "Hydraulic Erosion",
-        "media": { "type": "image", "source": "assets/images/hydroerosion.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/hydroerosion.png",
+          "alt": ""
+        },
         "description": "The Hydraulic erosion algorithm implemented aims to simulate the erosive features exerted on terrain from water droplets. Water droplets erode the terrain through bilinear interpolation across four vertices taking into account the gradient at each point. If the droplet identifies the current cell is a pit, the droplet releases sediment until the pit has been filled."
       },
       {
         "title": "Trochoidial Waves",
-        "media": { "type": "image", "source": "assets/images/waves.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/waves.png",
+          "alt": ""
+        },
         "description": "Trochoidial waves were implemented on the vertex shader and textured using a voronoi noise pattern, discussed below. The algorithm aims to capture the motion of waves by displacing the vertices using sine and cosine operations. To procure the sharp troughs, an offset with respect to the original vertex position, the anchor point, is applied in both the 'x' and 'z' directions to produce circular motion. The amplitude is controlled through a ratio, s / k, where 's' is a value between '0' and '1' and 'k' is 2 * PI divided by the wavelength."
       },
       {
         "title": "Voronoi Noise (GPU)",
-        "media": { "type": "image", "source": "assets/images/wavesB.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/wavesB.png",
+          "alt": ""
+        },
         "description": "Insert voronoi noise desc."
       }
     ],
@@ -137,10 +184,14 @@
   },
   {
     "id": "animation-systems",
-    "title": "Animation Systems",
+    "title": "Animation Systems (C++)",
     "thumbnail": "assets/images/animation.png",
-    "description": "A 2D and 3D animation system imlpemented in C++",
-    "media": { "type": "image", "source": "assets/images/animation.png", "alt": "A screenshot of a armature." },
+    "description": "A project exploring animation systems and techniques in 2D and 3D",
+    "media": {
+      "type": "image",
+      "source": "assets/images/animation.png",
+      "alt": "A screenshot of a armature."
+    },
     "overview": "In the Animation Systems module, I implemented the following systems and animation techniques Entity Component System, Blend Tree (3D Animation), 2D Armature Json Parser, 2D Skeleton Animator, Sprite Json Parser, Sprite Animator",
     "content": [
       {
@@ -155,7 +206,11 @@
       },
       {
         "title": "Blend Tree",
-        "media": { "type": "image", "source": "assets/images/blend-tree-img-1.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/blend-tree-img-1.png",
+          "alt": ""
+        },
         "description": "A blend tree was implemented allowing the user to construct complex animation states with minimum code. The tree supports the following nodes: Animation Clip, Linear Blend, 2D Blend, Additive Blend, Ragdoll, Output. Additionally, the blend tree supports multiple data attributes, controlling different aspects of the animations."
       }
     ],
@@ -172,17 +227,25 @@
     "content": [
       {
         "title": "Project Management",
-        "media": { "type": "image", "source": "assets/images/ufd-img-1.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/ufd-img-1.png",
+          "alt": ""
+        },
         "description": "Utilized project management tools such as Jira to facilitate effective communication and task tracking within the team. This ensured that all team members were aligned on project goals and deadlines."
       },
       {
         "title": "Materials and Scripting",
-        "media": { "type": "image", "source": "assets/images/ufd-img-4.png", "alt": "" },
+        "media": {
+          "type": "image",
+          "source": "assets/images/ufd-img-4.png",
+          "alt": ""
+        },
         "description": "Implemented various materials to enhance the visual appeal of the game environment. Additionally, scripted gameplay mechanics using Unreal Engine's Blueprint system to create interactive elements and ensure a cohesive gaming experience."
       }
     ],
     "tags": ["UE4", "Project Management", "Level Design", "Blueprints"],
-    "featured": true
+    "featured": false
   },
   {
     "id": "networking",
@@ -209,13 +272,13 @@
       }
     ],
     "tags": ["Networking", "Boids Algorithm", "Prediction", "Interpolation"],
-    "featured": true
+    "featured": false
   },
   {
     "id": "ai",
-    "title": "AI",
+    "title": "Neural Networks (Unity)",
     "thumbnail": "assets/images/ai.png",
-    "description": "An AI project developed during my studies",
+    "description": "A project exploring the use of neural networks to train agents to complete a simple race track.",
     "media": { "type": "video", "source": "PovBSHE3rAo", "alt": "" },
     "overview": "The primary aim of the project was to successfully train agents to complete a simple race track. Each agent is rewarded for traveling the furthest from spawn as well as receiving bonuses for reaching checkpoints without crashing. Each agent contains a neural network. The neural networks are composed of several layers of weights. Initially, the weights are randomised and with each successive generation, successful agents lend their networks to the next generation. In an effort to reflect real world behaviours, each generation is subjected to a trace amount of mutation, which involves slightly modifying the agents weights.",
     "content": [

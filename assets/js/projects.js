@@ -135,14 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadProjectsFromJSON();
   loadExperienceFromJSON();
 
-  // Attach event listener to the mobile nav toggle button
-  const toggle = document.querySelector(".nav-toggle");
-  const links = document.querySelector(".nav-links");
-
-  toggle.addEventListener("click", () => {
-    links.classList.toggle("open");
-  });
-
   document
     .getElementById("contact-form")
     .addEventListener("submit", function (event) {

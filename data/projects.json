@@ -244,7 +244,7 @@
       "source": "assets/images/animation.png",
       "alt": "A screenshot of a armature."
     },
-    "overview": "In the Animation Systems module, I implemented the following systems and animation techniques Entity Component System, Blend Tree (3D Animation), 2D Armature Json Parser, 2D Skeleton Animator, Sprite Json Parser, Sprite Animator",
+    "overview": "In the Animation Systems module, I implemented a range of core systems and techniques, including an Entity‑Component System, a 3D blend‑tree animation framework, a 2D armature JSON parser, a 2D skeletal animator, a sprite JSON parser, and a sprite animation system.",
     "content": [
       {
         "title": "2D Sprite Animation",

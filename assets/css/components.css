@@ -54,6 +54,16 @@
 }
 
 
+
+
+/* Social Link */
+.social-link {
+  padding: var(--space-2);
+}
+
+
+
+
 /* Hamburger Menu (Mobile) */
 .hamburger {
   width: 24px;

@@ -3,7 +3,7 @@ import { loadDataFromJson } from "./helper.js";
 // Create project card HTML
 function injectHTML_ProjectCard(project) {
   return `
-<div class="card-container">
+<div class="card-container expand">
         <a href="project.html?id=${project.id}">
         <div>
             <img src="${project.thumbnail}" alt="${project.title}">

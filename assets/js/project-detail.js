@@ -16,7 +16,7 @@ function resolveMediaElement(media) {
 
     // Check if media is defined and has a type
     if (media.type === "video" && media.source) {
-        return `<div class="video-wrapper">
+        return `<div class="flex-center video-container">
                     <iframe src="https://www.youtube.com/embed/${media.source}?rel=0"
                             title="YouTube video player"
                             allow="accelerometer; 
@@ -29,8 +29,15 @@ function resolveMediaElement(media) {
                     </iframe>
                 </div>`.trim();
     }
+    else if (media.type === "mp4" && media.source) {
+        return `<div class="flex-center video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="${media.source}" type="video/mp4">
+                    </video>
+                </div>`.trim();
+    }
     else if (media.type === "image" && media.source) {
-        return `<div class="flex"><img src="${media.source}" alt="${media.alt}"></img></div>`.trim();
+        return `<div class="flex-center"><img src="${media.source}" alt="${media.alt}"></img></div>`.trim();
     }
     return ``;
 }
@@ -41,7 +48,7 @@ function injectProjectPageHTML(project) {
     let content = ``;
 
     for (let entry of project.content) {
-        const titleHTML = `<h2>${entry.title}</h2>`;
+        const titleHTML = `<h2 class="separator">${entry.title}</h2>`;
         const mediaHTML = resolveMediaElement(entry.media);
         const descHTML = entry.description
             ? `<p>${entry.description}</p>`
@@ -49,9 +56,9 @@ function injectProjectPageHTML(project) {
 
             if (titleHTML && mediaHTML && descHTML) {
             content += `<section>
-                            <div class="section-container project-container ">
-                                ${titleHTML}
+                            <div class="section-container project-container">
                                 ${mediaHTML}
+                                ${titleHTML}
                                 ${descHTML}
                             </div>
                         </section>`.trim();
@@ -75,8 +82,10 @@ function injectProjectPageHTML(project) {
     container.innerHTML = `
     <section>    
         <div class="section-container project-container">
-            ${media}
-            <h1>${project.title}</h1>
+            <div class="flex-center">
+                ${media}
+            </div>    
+            <h1 class="separator">${project.title}</h1>
             <p>${project.overview}</p>
             ${scrollDownIndicator}
         </div>

@@ -38,11 +38,6 @@ input, button, textarea, select {
     font: inherit;
 }
 
-/** Consistent line height **/
-body {
-    line-height: 1.5;
-}
-
 /** Remove default button styles **/
 button {
     background: none;

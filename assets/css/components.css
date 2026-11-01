@@ -5,25 +5,11 @@
   backdrop-filter: blur(4px);
 }
 
-.nav-bar::after {
-  content: "";
-  position: static;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: var(--color-contrast-muted);
-  filter: blur(8px);
-  mix-blend-mode: screen; /* additive light */
-  opacity: 0.9;
-  pointer-events: none;
-}
-
-.nav-container{
+.nav-container {
   padding: var(--space-4);
 }
 
-.nav-link{
+.nav-link {
   padding: var(--space-2);
   border-radius: var(--radius-sm);
   text-decoration: none;
@@ -32,25 +18,7 @@
 }
 
 .nav-link.active {
-  border-radius: var(--radius-sm);
   background: var(--color-contrast-muted);
-}
-
-.nav-link-active {
-  padding: var(--space-2);
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  color: var(--color-text);
-  font-weight: bold;
-  border-radius: var(--radius-sm);
-  background: var(--color-contrast-muted);
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
 
@@ -64,32 +32,25 @@
 
 
 
-/* Hamburger Menu (Mobile) */
-.hamburger {
-  width: 24px;
-  height: 2px;
-  background: white;
-  position: relative;
-}
-
-.hamburger::before,
-.hamburger::after {
+/* Glow lines (shared by nav bar, footer and separators) */
+.nav-bar::after,
+.footer-container::after,
+.separator::after {
   content: "";
-  width: 24px;
   height: 2px;
-  background: white;
-  position: absolute;
+  background: var(--color-contrast-muted);
+  filter: blur(8px);
+  mix-blend-mode: screen; /* additive light */
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.nav-bar::after {
+  position: static;
   left: 0;
+  right: 0;
+  bottom: -1px;
 }
-
-.hamburger::before {
-  top: -8px;
-}
-
-.hamburger::after {
-  top: 8px;
-}
-
 
 
 
@@ -134,10 +95,6 @@
   padding-bottom: var(--space-2);
 }
 
-.project-container img {
-  border-radius: var(--radius-sm);
-}
-
 
 /* Profile Image */
 .profile-image {
@@ -151,24 +108,12 @@
 
 
 /* Contact Form */
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.error-message {
-  color: var(--color-error);
-  font-size: var(--fs-300);
-  display: none; /* Hidden by default */
-}
-
 .submit-button {
   background-color: var(--color-contrast-cool);
   color: white;
-  border: none;
   padding: 0.75rem;
   border-radius: 4px;
   font-size: 1rem;
-  cursor: pointer;
   width: 100%;
   transition: background-color 0.3s;
 }
@@ -180,25 +125,7 @@
 
 
 
-/* Tags */
-.tag-container {
-  display: flex;
-  padding-top: var(--space-4);
-  border-bottom: solid 1px var(--color-contrast-muted);
-}
-
-.tag-item {
-  display: inline-block;
-  margin-right: var(--space-1);
-  margin-left: var(--space-1);
-  padding-left: var(--space-1);
-  padding-right: var(--space-1);
-  background: var(--color-bg-alt);
-  border-radius: var(--radius-sm);
-  font-size: var(--fs-300);
-  color: var(--color-text-muted);
-}
-
+/* Footer */
 .footer-container {
   padding: var(--space-4);
   border-top: solid 1px var(--color-contrast-muted);
@@ -206,19 +133,11 @@
 }
 
 .footer-container::after {
-  content: "";
   position: absolute;
   left: 0;
   right: 0;
   top: -1px;
-  height: 2px;
-  background: var(--color-contrast-muted);
-  filter: blur(8px);
-  mix-blend-mode: screen; /* additive light */
-  opacity: 0.9;
-  pointer-events: none;
 }
-
 
 
 
@@ -230,20 +149,12 @@
 }
 
 .separator::after {
-  content: "";
   position: absolute;
-  top: 100%;  
+  top: 100%;
   left: 0;
-  height: 2px;
   width: 100%;
-  background: var(--color-contrast-muted);
-  filter: blur(8px);
-  mix-blend-mode: screen; /* additive light */
   opacity: 0.8;
-  pointer-events: none;
 }
-
-
 
 
 
@@ -260,11 +171,11 @@
 }
 
 .video-container {
-  padding: var(--space-4);  
+  padding: var(--space-4);
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16/9;
-  }
+}
 
 .scroll-indicator {
   display: flex;
@@ -278,7 +189,7 @@
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
-  } 
+  }
 }
 
 @keyframes typing {
@@ -293,33 +204,5 @@
 @keyframes blink {
   50% {
     border-color: transparent;
-  }
-}
-
-/* Mobile Navigation */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-    position: relative;
-    right: 1rem;
-    top: 1rem;
-    padding-top: var(--space-4);
-    padding-left: var(--space-2);
-    padding-bottom: var(--space-4);
-    padding-right: var(--space-2);
-  }
-
-  .nav-links {
-    display: none; /* hidden by default */
-    flex-direction: column; /* vertical layout */
-    gap: 1rem;
-    padding: 1rem;
-
-    align-items: center;
-    text-align: center;
-  }
-
-  .nav-links.open {
-    display: flex; /* shown when toggled */
   }
 }

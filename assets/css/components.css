@@ -46,7 +46,7 @@
 }
 
 .nav-bar::after {
-  position: static;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: -1px;
@@ -70,7 +70,9 @@
   object-fit: cover;
 }
 
-.card-container h1,h2,h3 {
+.card-container h1,
+.card-container h2,
+.card-container h3 {
   padding-top: var(--space-4);
   font-size: var(--fs-600);
 }
@@ -87,7 +89,9 @@
   background: transparent;
 }
 
-.project-container h1, h2, p {
+.project-container h1,
+.project-container h2,
+.project-container p {
   padding-top: var(--space-4);
 }
 

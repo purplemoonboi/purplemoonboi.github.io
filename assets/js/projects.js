@@ -47,33 +47,6 @@ async function loadExperienceFromJSON() {
   injectHTML_Card(education, "education-list", injectHTML_ExperienceCard);
 }
 
-function validatePhoneNumber(phone) {
-  // Remove all non-digit characters
-  const cleaned = phone.replace(/\D/g, "");
-
-  // Convert +44 format to 0 format
-  let normalised = cleaned;
-  if (cleaned.startsWith("44")) {
-    normalised = "0" + cleaned.slice(2);
-  }
-
-  // Must be exactly 11 digits and start with 0
-  if (!/^0\d{10}$/.test(normalised)) {
-    return false;
-  }
-
-  // Mobile numbers must start with 07
-  return /^07\d{9}$/.test(normalised);
-}
-
-function validateEmail(email) {
-  // Define the JS Regex pattern for a valid email address
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-
-  return emailRegex.test(email);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
 
   // Get a list of all HTML tags 
@@ -134,59 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadProjectsFromJSON();
   loadExperienceFromJSON();
-
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      // Clear error messages
-      const errorElements = document.querySelectorAll(".error-message");
-      errorElements.forEach((el) => (el.textContent = ""));
-
-      // Get form values
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      let isValid = true;
-
-      // Validate Name
-      if (name === "") {
-        document.getElementById("name-error").textContent = "Name is required.";
-        document.getElementById("name-error").style.display = "block";
-        isValid = false;
-      } //
-
-      // Validate Email
-      if (!validateEmail(email)) {
-        document.getElementById("email-error").textContent =
-          "A valid email is required.";
-        document.getElementById("email-error").style.display = "block";
-        isValid = false;
-      }
-
-      // Validate Phone (optional)
-      if (!validatePhoneNumber(phone)) {
-        document.getElementById("phone-error").textContent =
-          "Valid phone number is required.";
-        document.getElementById("phone-error").style.display = "block";
-        isValid = false;
-      }
-
-      // Validate Message
-      if (message === "") {
-        document.getElementById("message-error").textContent =
-          "Message cannot be empty.";
-        document.getElementById("message-error").style.display = "block";
-        isValid = false;
-      }
-
-      if (isValid) {
-        // Simulate form submission
-        alert("Form submitted successfully!");
-        document.getElementById("contact-form").reset();
-      }
-    });
 });

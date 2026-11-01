@@ -27,8 +27,8 @@ a {
     color: inherit;
 }
 
-/** Make images responsive **/
-img, picture {
+/** Make images and videos responsive **/
+img, picture, video {
     max-width: 100%;
     display: block;
 }

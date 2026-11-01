@@ -21,6 +21,55 @@
   background: var(--color-contrast-muted);
 }
 
+/* Menu button (only shown on mobile) */
+.nav-toggle {
+  display: none;
+  color: var(--color-text);
+}
+
+/* Hamburger icon: three lines drawn with the span and its pseudo-elements */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  transition: transform var(--transition-normal), background var(--transition-normal);
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Turn the lines into a cross while the menu is open */
+.nav-toggle[aria-expanded="true"] .hamburger {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 
 
 
@@ -193,6 +242,99 @@
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
+    transition: none !important;
+  }
+
+  .section-fade {
+    opacity: 1;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .profile-image {
+    max-width: 340px;
+    max-height: 340px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .profile-image {
+    max-width: 260px;
+    max-height: 260px;
+    margin-inline: auto;
+  }
+
+  .video-container {
+    padding: var(--space-4) 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-container {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  /* Larger tap areas for the icon links */
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--touch-target);
+    min-height: var(--touch-target);
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    margin-right: var(--space-2);
+  }
+
+  /* The link list becomes a drop-down panel under the header */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-4) var(--space-4);
+    background: var(--color-bg-alt);
+    border-bottom: solid 1px var(--color-contrast-muted);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu .nav-link {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    min-height: var(--touch-target);
+    text-align: center;
+  }
+
+  .profile-image {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .card-container h1,
+  .card-container h2,
+  .card-container h3 {
+    padding-top: var(--space-3);
+  }
+
+  .footer-container {
+    padding: var(--space-3);
+    font-size: var(--fs-300);
   }
 }
 

@@ -17,17 +17,18 @@
 
 <body>
   <header>
-    <nav class="nav-bar">
+    <nav class="nav-bar" aria-label="Main">
       <div class="flex-between">
         <ul class="flex-left nav-container">
-          <li><a class="social-link" href="https://github.com/purplemoonboi" target="_blank"><i
-                class="fa-brands fa-github"></i></a></li>
-          <li><a class="social-link" href="https://www.linkedin.com/in/rhys-duff/" target="_blank"><i
-                class="fa-brands fa-linkedin"></i></a>
-          </li>
-
+          <li><a class="social-link" href="https://github.com/purplemoonboi" target="_blank" rel="noopener"
+              aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+          <li><a class="social-link" href="https://www.linkedin.com/in/rhys-duff/" target="_blank" rel="noopener"
+              aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
         </ul>
-        <ul class="flex-right nav-container">
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-menu" class="flex-right nav-container nav-menu">
           <li><a class="nav-link" href="#home">Home</a></li>
           <li><a class="nav-link" href="#featured">Projects</a></li>
           <li><a class="nav-link" href="#experience">Experience</a></li>
@@ -49,7 +50,7 @@
         </div> -->
         <div class="grid-column">
           <div class="grid-row">
-            <img class="profile-image" src="assets/images/Rhys.jpg" alt="">
+            <img class="profile-image" src="assets/images/Rhys.jpg" alt="Photo of Rhys Duff">
           </div>
           <div class="flex-column flex-between-left">
             <div>
@@ -61,7 +62,7 @@
           </div>
         </div>
         <div class=" scroll-indicator">
-          <i class="fa-solid fa-beat-fade fa-chevron-down"></i>
+          <i class="fa-solid fa-beat-fade fa-chevron-down" aria-hidden="true"></i>
         </div>
       </div>
     </section>
@@ -110,6 +111,7 @@
       <p>© 2026 Rhys Duff</p>
     </div>
   </footer>
+  <script type="module" src="assets/js/nav.js"></script>
   <script type="module" src="assets/js/projects.js"></script>
 </body>
 

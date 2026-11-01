@@ -68,6 +68,9 @@
 
   /* Layout */
   --container-width: 1200px;
+  --header-height: 3.6rem; /* height of the fixed header */
+  --footer-height: 3.6rem; /* height of the fixed footer */
+  --touch-target: 44px; /* minimum tap size on touch screens */
   --bp-sm: 600px;
   --bp-md: 900px;
   --bp-lg: 1200px;
@@ -81,4 +84,36 @@
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
   --transition-slow: 400ms ease;
+}
+
+/* Breakpoints (CSS variables can't be used inside media queries,
+   so these match --bp-sm, --bp-md and --bp-lg above) */
+
+/* Laptop */
+@media (max-width: 1200px) {
+  :root {
+    --fs-900: 2.75rem;
+    --fs-800: 2rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  :root {
+    --fs-900: 2.5rem;
+    --fs-800: 1.875rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1.375rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  :root {
+    --header-height: 4rem; /* taller header with the menu button */
+    --fs-900: 2rem;
+    --fs-800: 1.625rem;
+    --fs-700: 1.375rem;
+    --fs-600: 1.25rem;
+  }
 }

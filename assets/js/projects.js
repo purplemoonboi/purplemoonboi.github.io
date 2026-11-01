@@ -98,7 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.5 },
+      // Trigger when a section crosses the middle of the screen, which
+      // also works for sections taller than the screen on mobile
+      { rootMargin: "-50% 0px -50% 0px" },
     );
 
     // Run the above function for each section

@@ -40,6 +40,13 @@ a:hover {
   color: var(--color-contrast-cool);
 }
 
+/* Keyboard focus */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent-highlight);
+  outline-offset: 2px;
+}
+
 /* Images */
 img {
   border-radius: var(--radius-sm);
@@ -74,6 +81,7 @@ body {
 
 main {
   height: 100vh;
+  height: 100dvh; /* matches the visible area on mobile browsers */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -81,6 +89,9 @@ main {
 
 section {
   min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: var(--header-height); /* keep content clear of the fixed header */
+  padding-bottom: var(--footer-height); /* and the fixed footer */
   scroll-snap-align: start;
   scroll-snap-stop: always;
   display: flex;
@@ -131,4 +142,31 @@ iframe {
     border-radius: 8px;
     background: #1a1a1a;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+  /* Snap to sections only when close to one, so tall sections
+     can be scrolled through freely on touch screens */
+  main {
+    scroll-snap-type: y proximity;
+  }
+
+  section {
+    scroll-snap-stop: normal;
+  }
+
+  /* Scale embedded videos with the screen width */
+  iframe {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html,
+  main {
+    scroll-behavior: auto;
+  }
 }

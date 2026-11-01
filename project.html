@@ -11,17 +11,29 @@
   <link rel="stylesheet" href="assets/css/layout.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/sections.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
   <header>
-    <nav class="nav-bar">
-      <ul class="flex-right nav-container">
-        <li><a class="nav-link" href="index.html#home">Home</a></li>
-        <li><a class="nav-link active" href="index.html#featured">Projects</a></li>
-        <li><a class="nav-link" href="index.html#experience">Experience</a></li>
-        <li><a class="nav-link" href="index.html#contact">Contact</a></li>
-      </ul>
+    <nav class="nav-bar" aria-label="Main">
+      <div class="flex-between">
+        <ul class="flex-left nav-container">
+          <li><a class="social-link" href="https://github.com/purplemoonboi" target="_blank" rel="noopener"
+              aria-label="GitHub (opens in a new tab)"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+          <li><a class="social-link" href="https://www.linkedin.com/in/rhys-duff/" target="_blank" rel="noopener"
+              aria-label="LinkedIn (opens in a new tab)"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
+        </ul>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-menu" class="flex-right nav-container nav-menu">
+          <li><a class="nav-link" href="index.html#home">Home</a></li>
+          <li><a class="nav-link active" href="index.html#featured">Projects</a></li>
+          <li><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -33,6 +45,7 @@
       <p>© 2026 Rhys Duff</p>
     </div>
   </footer>
+  <script type="module" src="assets/js/nav.js"></script>
   <script type="module" src="assets/js/project-detail.js"></script>
 </body>
 

@@ -1,7 +1,7 @@
 .list-container {
   padding: var(--space-4);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: var(--space-6);
 }
 
@@ -23,4 +23,23 @@
 
 .section-fade.visible {
   opacity: 1;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .list-container {
+    gap: var(--space-5);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .list-container {
+    padding: var(--space-4) 0;
+    gap: var(--space-4);
+  }
+
+  .section-container h1 {
+    padding: var(--space-4) 0;
+  }
 }

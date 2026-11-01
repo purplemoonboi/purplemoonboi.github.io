@@ -67,6 +67,30 @@
   transform: scale(1.0);
 }
 
-.expand:hover {
-  transform: scale(1.05);
+/* Only grow on devices with a real hover (not on tap) */
+@media (hover: hover) {
+  .expand:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .grid-column {
+    gap: var(--space-5);
+  }
+}
+
+/* Tablet and mobile: stack the two columns */
+@media (max-width: 900px) {
+  .grid-column {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: var(--space-4);
+  }
+
+  .flex-between-left {
+    align-items: center;
+  }
 }

@@ -43,6 +43,8 @@ Check changes at desktop, tablet and mobile widths.
 - `assets/js/`:
   - `nav.js`: mobile menu.
   - `projects.js`: home page cards, fade-in and active nav link.
+  - `smooth-scroll.js`: eased wheel/trackpad scrolling between home page
+    sections on desktop (touch and keyboard keep CSS snapping).
   - `project-detail.js`: project page.
   - `helper.js`: JSON loading.
 - WebGL2 background: `background.js` and `webgl.js`, plus `assets/shaders/`

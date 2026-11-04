@@ -169,6 +169,12 @@
 }
 
 
+/* Home section buttons (lined up with the heading text above) */
+.hero-actions {
+  padding-inline: var(--space-4);
+}
+
+
 /* Profile Image */
 .profile-image {
   width: 100%;
@@ -191,12 +197,21 @@
   text-align: center;
 }
 
-/* A link styled as a button (mailto links can't go inside a <button>) */
-.contact-button {
+.contact-container .link-button {
   display: block;
   width: 100%;
-  padding: var(--space-3);
+}
+
+
+
+
+/* Link Button */
+/* A link styled as a button (links can't go inside a <button>) */
+.link-button {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
   min-height: var(--touch-target);
+  text-align: center;
   background-color: var(--color-contrast-cool);
   color: white;
   border-radius: var(--radius-sm);
@@ -205,7 +220,7 @@
   transition: background-color var(--transition-normal);
 }
 
-.contact-button:hover {
+.link-button:hover {
   background-color: var(--color-contrast-muted);
   color: white;
 }

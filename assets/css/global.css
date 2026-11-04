@@ -1,5 +1,16 @@
 /** Global CSS File **/
 
+/* Fonts */
+/* Inter variable font, hosted with the site (covers weights 100-900).
+   Licensed under the SIL Open Font License: see assets/fonts/inter/OFL.txt */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter/inter-latin-wght-normal.woff2") format("woff2");
+}
+
 /* Headings */
 h1,
 h2,

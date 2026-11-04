@@ -29,11 +29,11 @@
   {
     "id": "dissertation",
     "title": "Isosurface Algorithms (DX12)",
-    "thumbnail": "assets/images/banner.png",
+    "thumbnail": "assets/images/Banner.PNG",
     "description": "Marching Cubes, Surface Nets and Dual Contouring implemented on the GPU",
     "media": {
       "type": "image",
-      "source": "assets/images/poster.png",
+      "source": "assets/images/poster.PNG",
       "alt": "A poster showcasing the marching cubes implementation."
     },
     "overview": "My honour thesis explored three isosurface algorithms: Marching Cubes, Surface Nets, and Dual Contouring. The primary goal was to implement these algorithms on the GPU and evaluate their performance and visual quality. I developed a real-time terrain editor to visualize and interact with the implemented algorithms.",
@@ -42,7 +42,7 @@
         "title": "Marching Cubes",
         "media": {
           "type": "image",
-          "source": "assets/images/marching-cubes-textured.png",
+          "source": "assets/images/marching-cubes-textured.PNG",
           "alt": "A wireframe render of marching cubes terrain."
         },
         "description": "Marching Cubes was implemented in a compute shader using . The algorithm evaluates a uniform cubic grid of scalar points, checking each cell corner against an isovalue to determine which parts of the cell are within or outside of the isosurface. An integer is generated, based on the number of active corners, which is used to look-up a table of pre-configured edges representing the layout of the triangles."
@@ -51,7 +51,7 @@
         "title": "Dual Contouring",
         "media": {
           "type": "image",
-          "source": "assets/images/dual-contouring-wire.png",
+          "source": "assets/images/dual-contouring-wire.PNG",
           "alt": "A wireframe render of surface nets terrain."
         },
         "description": "The second isosurface algorithm I explored was the Dual-Contouring algorithm. Unlike the Marching Cubes algorithm, Dual Contouring generates precisely one vertex per cell and considers the sign change along the edge of the cell. A sign change is indicative that the isosurface passed through that edge. The Surface Nets algorithm places a vertex in the center of a cell, whereas Dual Contouring uses an quadratic error function to determine the best position to place the vertex. Both dual-algorithms generates clean geometry and are better suited at preserving sharp features."
@@ -68,11 +68,11 @@
   {
     "id": "foundation",
     "title": "Foundation Engine",
-    "thumbnail": "assets/images/foundation.png",
+    "thumbnail": "assets/images/foundation.PNG",
     "description": "An on going personal project exploring game engine development",
     "media": {
       "type": "image",
-      "source": "assets/images/foundation.png",
+      "source": "assets/images/foundation.PNG",
       "alt": "An image of the foundation engine editor."
     },
     "overview": "Foundation Engine is an ongoing personal project where I explore game engine development. The main focus of the project is to explore and research how systems are architected and the intercommunications between these systems.",
@@ -81,7 +81,7 @@
         "title": "Graphics",
         "media": {
           "type": "image",
-          "source": "assets/images/mc-wireframe-3.png",
+          "source": "assets/images/mc-wireframe-3.PNG",
           "alt": ""
         },
         "description": "The foundation engine has seen a couple of rendering back-ends, from OpenGL 4.6 to DirectX 12. Currently, the rendering interface is implemented through NVRHI, Nvidia's abstracted rendering interface."
@@ -90,7 +90,7 @@
         "title": "ENTT",
         "media": {
           "type": "image",
-          "source": "assets/images/sn-wireframe.png",
+          "source": "assets/images/sn-wireframe.PNG",
           "alt": ""
         },
         "description": "Integrated into the world context (also referred to as the 'scene'), ENTT serves as the engine's main entity component system (ECS), enforcing a component based architecture. The world context owns and manages the entity registry, where entities are made accessible. Foundation also supports scriptable entities, allowing for custom behaviours and logic."
@@ -99,7 +99,7 @@
         "title": "Services Registry",
         "media": {
           "type": "image",
-          "source": "assets/images/sn-wireframe.png",
+          "source": "assets/images/sn-wireframe.PNG",
           "alt": ""
         },
         "description": "A debated topic in the game engine communicated, a services registry is implemented adhering to the service locator pattern, supporting global access to engine subsystems, like the file manager. An instance of the services registry is created in the core application and injected into each layer of the application. Long term, I'm aiming to refactor the service locator, and instead manage and expose subsystems within relevant contexts. For instance, the world context will own the AI Subsystem, which wil be made available to all scriptable entities. This approach should avoid global access and highlight dependencies."
@@ -115,11 +115,11 @@
   {
     "id": "gfx-shaders-dx11",
     "title": "Graphics Programming (DX11)",
-    "thumbnail": "assets/images/shaders.png",
+    "thumbnail": "assets/images/shaders.PNG",
     "description": "Showcasing several graphics programming techniques in shaders",
     "media": {
       "type": "image",
-      "source": "assets/images/shaders.png",
+      "source": "assets/images/shaders.PNG",
       "alt": "A screenshot of the DX11 scene rendering several graphics techniques."
     },
     "overview": "",
@@ -182,11 +182,11 @@
   {
     "id": "proc-gen-dx11",
     "title": "Procedural Generation (DX11)",
-    "thumbnail": "assets/images/tools-programming.png",
+    "thumbnail": "assets/images/tools-programming.PNG",
     "description": "An application showcasing several procedural generation techniques implemented on the CPU and GPU",
     "media": {
       "type": "image",
-      "source": "assets/images/tools-programming.png",
+      "source": "assets/images/tools-programming.PNG",
       "alt": "A screenshot of the DX11 scene rendering a height map and procedural waves."
     },
     "overview": "In the procedural methods module I implemented several procedural techniques on the CPU. The following techniques were implemented in a DX11 framework: Hydraulic Erosion, Trochoidial Waves, Voronoi Noise (GPU), Simplex Noise, Perlin Noise, Improved Perlin Noise, Octave Perlin Noise, Ridged Perlin Noise",
@@ -195,7 +195,7 @@
         "title": "Perlin Noise",
         "media": {
           "type": "image",
-          "source": "assets/images/noerosion.png",
+          "source": "assets/images/noerosion.PNG",
           "alt": ""
         },
         "description": "Perlin noise forms the foundation of most procedural techniques in this project. The Perlin algorithm was implemented in C++, using the original C version as a reference. The improved Perlin variant and the Simplex noise algorithm were also implemented, and either can be used to drive the terrain generator."
@@ -204,7 +204,7 @@
         "title": "Hydraulic Erosion",
         "media": {
           "type": "image",
-          "source": "assets/images/hydroerosion.png",
+          "source": "assets/images/hydroerosion.PNG",
           "alt": ""
         },
         "description": "The Hydraulic erosion algorithm implemented aims to simulate the erosive features exerted on terrain from water droplets. Water droplets erode the terrain through bilinear interpolation across four vertices taking into account the gradient at each point. If the droplet identifies the current cell is a pit, the droplet releases sediment until the pit has been filled."
@@ -213,7 +213,7 @@
         "title": "Trochoidial Waves",
         "media": {
           "type": "image",
-          "source": "assets/images/waves.png",
+          "source": "assets/images/waves.PNG",
           "alt": ""
         },
         "description": "Trochoidal waves were implemented in the vertex shader and textured using a Voronoi noise pattern. The algorithm models wave motion by displacing vertices with sine and cosine functions. To produce sharp troughs, each vertex is offset relative to its original position—its anchor point—in both the x and z directions, creating circular motion. Wave amplitude is controlled using the ratio s / k, where s ranges from 0 to 1 and k is defined as 2𝜋 divided by the wavelength."
@@ -222,7 +222,7 @@
         "title": "Voronoi Noise (GPU)",
         "media": {
           "type": "image",
-          "source": "assets/images/wavesB.png",
+          "source": "assets/images/wavesB.PNG",
           "alt": ""
         },
         "description": "Voronoi noise was implemented on the GPU to generate cellular patterns used for texturing and surface variation. The algorithm computes the distance from each fragment to a set of feature points, producing the characteristic cell structure of Voronoi diagrams. This GPU‑based approach keeps the implementation lightweight while still providing visually distinct patterns that can be used to enhance terrain and wave effects."
@@ -268,7 +268,7 @@
         "title": "Blend Tree",
         "media": {
           "type": "image",
-          "source": "assets/images/blend-tree-img-1.png",
+          "source": "assets/images/blend-tree-img-1.PNG",
           "alt": ""
         },
         "description": "A blend tree system was implemented to let users build complex animation behaviours with minimal code. The tree supports several node types, including Animation Clip, Linear Blend, 2D Blend, Additive Blend, Ragdoll, and Output. It also handles multiple data attributes, allowing fine‑grained control over different aspects of each animation."
@@ -323,7 +323,7 @@
   {
     "id": "networking",
     "title": "Networking",
-    "thumbnail": "assets/images/networking.png",
+    "thumbnail": "assets/images/networking.PNG",
     "description": "A networking project developed during my studies",
     "media": {
       "type": "video",
@@ -395,5 +395,98 @@
       "Neural Networks"
     ],
     "featured": true
+  },
+  {
+    "id": "algorithms-part-one",
+    "title": "Data Structures and Algorithms - Part One",
+    "thumbnail": "assets/images/tools-programming.PNG",
+    "description": "",
+    "media": {
+      "type": "video",
+      "source": "4WiNybHq5m4",
+      "alt": ""
+    },
+    "overview": "",
+    "content": [
+      {
+        "title": "Dijkstra",
+        "media": {
+          "type": "",
+          "source": "",
+          "alt": ""
+        },
+        "description": ""
+      },
+      {
+        "title": "A*",
+        "media": {
+          "type": "",
+          "source": "",
+          "alt": ""
+        },
+        "description": ""
+      }
+    ],
+    "tags": [
+      "C++",
+      "Pathfinding",
+      "Dijkstra",
+      "A*"
+    ],
+    "featured": false
+  },
+  {
+    "id": "algorithms-part-two",
+    "title": "Data Structures and Algorithms - Part Two",
+    "thumbnail": "assets/images/mandelbrot.png",
+    "description": "",
+    "media": {
+      "type": "image",
+      "source": "assets/images/mandelbrot.png",
+      "alt": "Mandelbrot set rendered on the GPU"
+    },
+    "overview": "",
+    "content": [
+      {
+        "title": "C++ AMP",
+        "media": {
+          "type": "",
+          "source": "",
+          "alt": ""
+        },
+        "description": ""
+      }
+    ],
+    "tags": [
+      "C++ AMP",
+      "GPU",
+      "Mandelbrot"
+    ],
+    "featured": false
+  },
+  {
+    "id": "professional-project",
+    "title": "Professional Project",
+    "thumbnail": "assets/images/starstranded.PNG",
+    "description": "",
+    "media": {
+      "type": "video",
+      "source": "y8Hp-7iviE8",
+      "alt": ""
+    },
+    "overview": "",
+    "content": [
+      {
+        "title": "",
+        "media": {
+          "type": "",
+          "source": "",
+          "alt": ""
+        },
+        "description": ""
+      }
+    ],
+    "tags": [],
+    "featured": false
   }
 ]
